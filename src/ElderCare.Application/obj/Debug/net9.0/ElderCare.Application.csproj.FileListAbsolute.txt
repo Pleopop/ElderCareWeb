@@ -1,0 +1,15 @@
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.csproj.AssemblyReference.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.AssemblyInfoInputs.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.AssemblyInfo.cs
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.csproj.CoreCompileInputs.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Application.deps.json
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Application.dll
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Application.pdb
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Domain.dll
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Domain.pdb
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCar.D5AAD962.Up2Date
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.dll
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\refint\ElderCare.Application.dll
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ElderCare.Application.pdb
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\Debug\net9.0\ref\ElderCare.Application.dll

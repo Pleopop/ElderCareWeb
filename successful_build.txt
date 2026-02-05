@@ -1,0 +1,147 @@
+﻿Build started 2/5/2026 8:15:17 PM.
+     1>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" on node 1 (Restore target(s)).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Debug|Any CPU".
+       _GetAllRestoreProjectPathItems:
+         Determining projects to restore...
+       Restore:
+         X.509 certificate chain validation will use the default trust store selected by .NET for code signing.
+         X.509 certificate chain validation will use the default trust store selected by .NET for timestamping.
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\project.assets.json
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\project.assets.json
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\project.assets.json
+         Restored C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\ElderCare.Domain.csproj (in 54 ms).
+         Restored C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\ElderCare.API.csproj (in 57 ms).
+         Restored C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\ElderCare.Shared.csproj (in 54 ms).
+     1>C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj [C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln]
+     1>C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj [C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln]
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\obj\project.assets.json
+         Assets file has not changed. Skipping assets file writing. Path: C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\project.assets.json
+         Restored C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj (in 78 ms).
+         Restored C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj (in 78 ms).
+         
+         NuGet Config files used:
+             C:\Users\firel\AppData\Roaming\NuGet\NuGet.Config
+             C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.FallbackLocation.config
+             C:\Program Files (x86)\NuGet\Config\Microsoft.VisualStudio.Offline.config
+         
+         Feeds used:
+             https://api.nuget.org/v3/index.json
+             C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+         All projects are up-to-date for restore.
+     1>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (Restore target(s)).
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" on node 1 (default targets).
+     1>ValidateSolutionConfiguration:
+         Building solution configuration "Debug|Any CPU".
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (1:2) is building "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj" (3:7) on node 4 (default targets).
+     3>C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (1:2) is building "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\ElderCare.Shared.csproj" (2:7) on node 2 (default targets).
+     2>GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (1:2) is building "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj" (5:8) on node 5 (default targets).
+     5>C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj
+       CoreGenerateAssemblyInfo:
+       Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+       _GenerateSourceLinkFile:
+         Source Link is empty, file 'obj\Debug\net9.0\ElderCare.Shared.sourcelink.json' does not exist.
+       CoreCompile:
+       Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildDependencyFile:
+       Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+       CopyFilesToOutputDirectory:
+         ElderCare.Shared -> C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\bin\Debug\net9.0\ElderCare.Shared.dll
+     2>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\ElderCare.Shared.csproj" (default targets).
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (1:2) is building "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\ElderCare.Domain.csproj" (6:8) on node 1 (default targets).
+     6>GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreGenerateAssemblyInfo:
+       Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+       _GenerateSourceLinkFile:
+         Source Link is empty, file 'obj\Debug\net9.0\ElderCare.Domain.sourcelink.json' does not exist.
+       CoreCompile:
+       Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildDependencyFile:
+       Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+       CopyFilesToOutputDirectory:
+         ElderCare.Domain -> C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\bin\Debug\net9.0\ElderCare.Domain.dll
+     6>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\ElderCare.Domain.csproj" (default targets).
+     5>GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreGenerateAssemblyInfo:
+       Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+       _GenerateSourceLinkFile:
+         Source Link is empty, file 'obj\Debug\net9.0\ElderCare.Application.sourcelink.json' does not exist.
+       CoreCompile:
+       Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildDependencyFile:
+       Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+       CopyFilesToOutputDirectory:
+         ElderCare.Application -> C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\bin\Debug\net9.0\ElderCare.Application.dll
+     5>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj" (default targets).
+     3>GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreGenerateAssemblyInfo:
+       Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+       _GenerateSourceLinkFile:
+         Source Link is empty, file 'obj\Debug\net9.0\ElderCare.Infrastructure.sourcelink.json' does not exist.
+       CoreCompile:
+       Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildDependencyFile:
+       Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildRuntimeConfigurationFiles:
+       Skipping target "GenerateBuildRuntimeConfigurationFiles" because all output files are up-to-date with respect to the input files.
+       CopyFilesToOutputDirectory:
+         ElderCare.Infrastructure -> C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\bin\Debug\net9.0\ElderCare.Infrastructure.dll
+     3>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj" (default targets).
+   1:2>Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (1:2) is building "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\ElderCare.API.csproj" (4:6) on node 3 (default targets).
+     4>GenerateTargetFrameworkMonikerAttribute:
+       Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
+       CoreGenerateAssemblyInfo:
+       Skipping target "CoreGenerateAssemblyInfo" because all output files are up-to-date with respect to the input files.
+       _DiscoverMvcApplicationParts:
+       Skipping target "_DiscoverMvcApplicationParts" because all output files are up-to-date with respect to the input files.
+       _GenerateSourceLinkFile:
+         Source Link is empty, file 'obj\Debug\net9.0\ElderCare.API.sourcelink.json' does not exist.
+       CoreCompile:
+       Skipping target "CoreCompile" because all output files are up-to-date with respect to the input files.
+       _CreateAppHost:
+       Skipping target "_CreateAppHost" because all output files are up-to-date with respect to the input files.
+       _ProcessScopedCssFiles:
+       Skipping target "_ProcessScopedCssFiles" because it has no outputs.
+       _ProcessScopedCssFiles:
+       Skipping target "_ProcessScopedCssFiles" because it has no outputs.
+       _BuildCopyStaticWebAssetsPreserveNewest:
+       Skipping target "_BuildCopyStaticWebAssetsPreserveNewest" because it has no outputs.
+       _CopyOutOfDateSourceItemsToOutputDirectory:
+       Skipping target "_CopyOutOfDateSourceItemsToOutputDirectory" because all output files are up-to-date with respect to the input files.
+       GenerateBuildDependencyFile:
+       Skipping target "GenerateBuildDependencyFile" because all output files are up-to-date with respect to the input files.
+       GenerateBuildRuntimeConfigurationFiles:
+       Skipping target "GenerateBuildRuntimeConfigurationFiles" because all output files are up-to-date with respect to the input files.
+       CopyFilesToOutputDirectory:
+         ElderCare.API -> C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\bin\Debug\net9.0\ElderCare.API.dll
+     4>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\ElderCare.API.csproj" (default targets).
+     1>Done Building Project "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (default targets).
+
+Build succeeded.
+
+       "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (Restore target) (1) ->
+       (Restore target) -> 
+         C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj [C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln]
+         C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj [C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln]
+
+
+       "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (default target) (1:2) ->
+       "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj" (default target) (3:7) ->
+       (ResolvePackageAssets target) -> 
+         C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\ElderCare.Infrastructure.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj
+
+
+       "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\ElderCareConnect.sln" (default target) (1:2) ->
+       "C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj" (default target) (5:8) ->
+         C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Application\ElderCare.Application.csproj : warning NU1903: Package 'Microsoft.Extensions.Caching.Memory' 8.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-qj66-m88j-hmgj
+
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.55
