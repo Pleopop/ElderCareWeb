@@ -5,6 +5,7 @@ C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\De
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.AssemblyInfoInputs.cache
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.AssemblyInfo.cs
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.csproj.CoreCompileInputs.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.sourcelink.json
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\refint\ElderCare.Shared.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Shared\obj\Debug\net9.0\ElderCare.Shared.pdb

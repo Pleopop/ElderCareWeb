@@ -89,6 +89,9 @@ builder.Services.AddCors(options =>
     });
 });
 
+// SignalR
+builder.Services.AddSignalR();
+
 // HttpContextAccessor (required for CurrentUserService)
 builder.Services.AddHttpContextAccessor();
 
@@ -118,6 +121,9 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Map SignalR Hubs
+app.MapHub<ElderCare.API.Hubs.NotificationHub>("/hubs/notifications");
 
 app.Run();
 

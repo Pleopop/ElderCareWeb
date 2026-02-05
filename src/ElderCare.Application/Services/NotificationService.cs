@@ -1,4 +1,5 @@
 using ElderCare.Application.Common.Interfaces;
+using ElderCare.Application.Features.Notifications.DTOs;
 using ElderCare.Domain.Entities;
 using ElderCare.Domain.Enums;
 using ElderCare.Domain.Interfaces;
@@ -39,6 +40,27 @@ public class NotificationService : INotificationService
         await _unitOfWork.SaveChangesAsync();
 
         return notification;
+    }
+
+    public async Task<List<NotificationDto>> GetUserNotificationsAsync(Guid userId)
+    {
+        var notifications = await _unitOfWork.Notifications.GetAllAsync(n => n.UserId == userId);
+        
+        return notifications.Select(n => new NotificationDto
+        {
+            Id = n.Id,
+            Title = n.Title,
+            Message = n.Message,
+            Type = n.Type.ToString(),
+            Category = n.Category.ToString(),
+            Priority = n.Priority.ToString(),
+            IsRead = n.IsRead,
+            ReadAt = n.ReadAt,
+            CreatedAt = n.CreatedAt,
+            ActionUrl = n.ActionUrl,
+            RelatedEntityId = n.RelatedEntityId,
+            RelatedEntityType = n.RelatedEntityType
+        }).ToList();
     }
 
     public async Task<int> GetUnreadCountAsync(Guid userId)

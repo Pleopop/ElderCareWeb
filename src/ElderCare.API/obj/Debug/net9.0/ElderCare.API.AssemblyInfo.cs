@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b5c871fa25086c92fa257170e693cfbe467ac44")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

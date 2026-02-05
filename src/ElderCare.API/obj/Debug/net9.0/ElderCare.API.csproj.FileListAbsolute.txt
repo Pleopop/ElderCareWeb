@@ -123,3 +123,4 @@ C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\Debug
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ElderCare.API.pdb
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ElderCare.API.genruntimeconfig.cache
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ref\ElderCare.API.dll
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ElderCare.API.sourcelink.json

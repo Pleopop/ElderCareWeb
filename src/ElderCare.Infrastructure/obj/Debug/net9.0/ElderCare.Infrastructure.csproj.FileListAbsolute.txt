@@ -11,6 +11,7 @@ C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructur
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCare.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCare.Infrastructure.AssemblyInfo.cs
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCare.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCare.Infrastructure.sourcelink.json
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCar.2B826655.Up2Date
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\ElderCare.Infrastructure.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Infrastructure\obj\Debug\net9.0\refint\ElderCare.Infrastructure.dll

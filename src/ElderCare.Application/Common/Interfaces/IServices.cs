@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using ElderCare.Application.Features.Notifications.DTOs;
 using ElderCare.Domain.Entities;
 using ElderCare.Domain.Enums;
 
@@ -59,6 +60,7 @@ public interface ILocationService
 public interface INotificationService
 {
     Task<Notification> SendNotificationAsync(Guid userId, string title, string message, string category, string type, string priority, string? actionUrl, Guid? relatedEntityId, string? relatedEntityType);
+    Task<List<NotificationDto>> GetUserNotificationsAsync(Guid userId);
     Task<int> GetUnreadCountAsync(Guid userId);
     Task MarkAsReadAsync(Guid notificationId);
     Task MarkAllAsReadAsync(Guid userId);
