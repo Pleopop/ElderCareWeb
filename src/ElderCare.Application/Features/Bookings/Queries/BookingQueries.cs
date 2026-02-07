@@ -24,16 +24,16 @@ public class GetMyBookingsQueryHandler : IRequestHandler<GetMyBookingsQuery, Res
 
     public async Task<Result<List<BookingDto>>> Handle(GetMyBookingsQuery request, CancellationToken cancellationToken)
     {
-        var customerProfile = await _unitOfWork.CustomerProfiles.Query()
+        var Customer = await _unitOfWork.Customers.Query()
             .FirstOrDefaultAsync(c => c.UserId == _currentUserService.UserId, cancellationToken);
 
-        if (customerProfile == null)
+        if (Customer == null)
             return Result<List<BookingDto>>.Failure("Not found", "Customer profile not found");
 
         var query = _unitOfWork.Bookings.Query()
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
-            .Where(b => b.CustomerProfileId == customerProfile.Id);
+            .Where(b => b.CustomerId == Customer.Id);
 
         if (request.Status.HasValue)
             query = query.Where(b => b.Status == request.Status.Value);
@@ -43,10 +43,10 @@ public class GetMyBookingsQueryHandler : IRequestHandler<GetMyBookingsQuery, Res
         var dtos = bookings.Select(b => new BookingDto
         {
             Id = b.Id,
-            CustomerProfileId = b.CustomerProfileId,
-            CustomerName = customerProfile.FullName,
-            CaregiverProfileId = b.CaregiverProfileId,
-            CaregiverName = b.CaregiverProfile.FullName,
+            CustomerId = b.CustomerId,
+            CustomerName = Customer.FullName,
+            CaregiverId = b.CaregiverId,
+            CaregiverName = b.Caregiver.FullName,
             BeneficiaryId = b.BeneficiaryId,
             BeneficiaryName = b.Beneficiary.FullName,
             ScheduledStartTime = b.ScheduledStartTime,
@@ -81,16 +81,16 @@ public class GetCaregiverBookingsQueryHandler : IRequestHandler<GetCaregiverBook
 
     public async Task<Result<List<BookingDto>>> Handle(GetCaregiverBookingsQuery request, CancellationToken cancellationToken)
     {
-        var caregiverProfile = await _unitOfWork.Caregivers.Query()
+        var Caregiver = await _unitOfWork.Caregivers.Query()
             .FirstOrDefaultAsync(c => c.UserId == _currentUserService.UserId, cancellationToken);
 
-        if (caregiverProfile == null)
+        if (Caregiver == null)
             return Result<List<BookingDto>>.Failure("Not found", "Caregiver profile not found");
 
         var query = _unitOfWork.Bookings.Query()
-            .Include(b => b.CustomerProfile)
+            .Include(b => b.Customer)
             .Include(b => b.Beneficiary)
-            .Where(b => b.CaregiverProfileId == caregiverProfile.Id);
+            .Where(b => b.CaregiverId == Caregiver.Id);
 
         if (request.Status.HasValue)
             query = query.Where(b => b.Status == request.Status.Value);
@@ -100,10 +100,10 @@ public class GetCaregiverBookingsQueryHandler : IRequestHandler<GetCaregiverBook
         var dtos = bookings.Select(b => new BookingDto
         {
             Id = b.Id,
-            CustomerProfileId = b.CustomerProfileId,
-            CustomerName = b.CustomerProfile.FullName,
-            CaregiverProfileId = b.CaregiverProfileId,
-            CaregiverName = caregiverProfile.FullName,
+            CustomerId = b.CustomerId,
+            CustomerName = b.Customer.FullName,
+            CaregiverId = b.CaregiverId,
+            CaregiverName = Caregiver.FullName,
             BeneficiaryId = b.BeneficiaryId,
             BeneficiaryName = b.Beneficiary.FullName,
             ScheduledStartTime = b.ScheduledStartTime,

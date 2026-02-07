@@ -79,14 +79,14 @@ public class RegisterCustomerCommandHandler : IRequestHandler<RegisterCustomerCo
         await _unitOfWork.Users.AddAsync(user, cancellationToken);
 
         // Create customer profile
-        var customerProfile = new CustomerProfile
+        var Customer = new Customer
         {
             UserId = user.Id,
             FullName = request.Request.FullName,
             Address = request.Request.Address
         };
 
-        await _unitOfWork.CustomerProfiles.AddAsync(customerProfile, cancellationToken);
+        await _unitOfWork.Customers.AddAsync(Customer, cancellationToken);
 
         // Create wallet
         var wallet = new Wallet
@@ -203,14 +203,14 @@ public class RegisterCaregiverCommandHandler : IRequestHandler<RegisterCaregiver
         await _unitOfWork.Users.AddAsync(user, cancellationToken);
 
         // Create caregiver profile
-        var caregiverProfile = new CaregiverProfile
+        var Caregiver = new Caregiver
         {
             UserId = user.Id,
             FullName = request.Request.FullName,
             VerificationStatus = VerificationStatus.Pending
         };
 
-        await _unitOfWork.Caregivers.AddAsync(caregiverProfile, cancellationToken);
+        await _unitOfWork.Caregivers.AddAsync(Caregiver, cancellationToken);
 
         // Create wallet
         var wallet = new Wallet

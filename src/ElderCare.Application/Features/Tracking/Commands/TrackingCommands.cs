@@ -53,7 +53,7 @@ public class UpdateLocationCommandHandler : IRequestHandler<UpdateLocationComman
             return Result<LocationDto>.Failure("User not authenticated");
 
         // TODO: Verify user is the caregiver for this booking
-        // This requires accessing User -> CaregiverProfile relationship
+        // This requires accessing User -> Caregiver relationship
         // For now, we'll skip this check
 
         // Validate GPS accuracy (reject if too inaccurate)

@@ -29,16 +29,16 @@ public class MatchingService : IMatchingService
 
     public async Task<MatchingResult> CalculateMatchAsync(
         Guid beneficiaryId,
-        Guid caregiverProfileId,
-        CaregiverProfile caregiver,
+        Guid CaregiverId,
+        Caregiver caregiver,
         Beneficiary beneficiary)
     {
         // Calculate individual scores
-        var personalityScore = await CalculatePersonalityScoreAsync(caregiverProfileId, beneficiaryId);
-        var skillScore = await CalculateSkillScoreAsync(caregiverProfileId, beneficiaryId);
+        var personalityScore = await CalculatePersonalityScoreAsync(CaregiverId, beneficiaryId);
+        var skillScore = await CalculateSkillScoreAsync(CaregiverId, beneficiaryId);
         var availabilityScore = CalculateAvailabilityScore(caregiver);
         var locationScore = CalculateLocationScore(caregiver, beneficiary);
-        var performanceScore = await CalculatePerformanceScoreAsync(caregiverProfileId);
+        var performanceScore = await CalculatePerformanceScoreAsync(CaregiverId);
 
         // Weighted overall score
         var overallScore = (
@@ -52,7 +52,7 @@ public class MatchingService : IMatchingService
         return new MatchingResult
         {
             BeneficiaryId = beneficiaryId,
-            CaregiverProfileId = caregiverProfileId,
+            CaregiverId = CaregiverId,
             OverallScore = overallScore,
             PersonalityScore = personalityScore,
             SkillScore = skillScore,
@@ -63,11 +63,11 @@ public class MatchingService : IMatchingService
         };
     }
 
-    private async Task<double> CalculatePersonalityScoreAsync(Guid caregiverProfileId, Guid beneficiaryId)
+    private async Task<double> CalculatePersonalityScoreAsync(Guid CaregiverId, Guid beneficiaryId)
     {
         // Get caregiver personality assessment
         var caregiverPersonality = await _personalityRepo
-            .FirstOrDefaultAsync(p => p.CaregiverProfileId == caregiverProfileId);
+            .FirstOrDefaultAsync(p => p.CaregiverId == CaregiverId);
 
         if (caregiverPersonality == null)
             return 50.0; // Default score if no assessment
@@ -111,11 +111,11 @@ public class MatchingService : IMatchingService
         return Math.Clamp(score, 0, 100);
     }
 
-    private async Task<double> CalculateSkillScoreAsync(Guid caregiverProfileId, Guid beneficiaryId)
+    private async Task<double> CalculateSkillScoreAsync(Guid CaregiverId, Guid beneficiaryId)
     {
         // Get caregiver skills
         var caregiverSkills = await _skillRepo
-            .GetAllAsync(s => s.CaregiverProfileId == caregiverProfileId);
+            .GetAllAsync(s => s.CaregiverId == CaregiverId);
 
         if (!caregiverSkills.Any())
             return 40.0; // Low score if no skills listed
@@ -149,7 +149,7 @@ public class MatchingService : IMatchingService
         return Math.Clamp(matchPercentage, 0, 100);
     }
 
-    private double CalculateAvailabilityScore(CaregiverProfile caregiver)
+    private double CalculateAvailabilityScore(Caregiver caregiver)
     {
         // Simple availability score based on verification status and experience
         if (caregiver.VerificationStatus != Domain.Enums.VerificationStatus.Approved)
@@ -175,18 +175,18 @@ public class MatchingService : IMatchingService
         return Math.Clamp(score, 0, 100);
     }
 
-    private double CalculateLocationScore(CaregiverProfile caregiver, Beneficiary beneficiary)
+    private double CalculateLocationScore(Caregiver caregiver, Beneficiary beneficiary)
     {
         // TODO: Implement actual distance calculation when location data is available
         // For now, return a default score
         return 75.0;
     }
 
-    private async Task<double> CalculatePerformanceScoreAsync(Guid caregiverProfileId)
+    private async Task<double> CalculatePerformanceScoreAsync(Guid CaregiverId)
     {
         // Get caregiver's reviews
         var reviews = await _reviewRepo
-            .GetAllAsync(r => r.CaregiverId == caregiverProfileId);
+            .GetAllAsync(r => r.CaregiverId == CaregiverId);
 
         if (!reviews.Any())
             return 60.0; // Default score for new caregivers

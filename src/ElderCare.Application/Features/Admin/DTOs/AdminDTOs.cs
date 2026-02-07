@@ -18,6 +18,6 @@ public class CaregiverApprovalDto
 
 public class ApproveRejectRequest
 {
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     public string? RejectionReason { get; set; }
 }

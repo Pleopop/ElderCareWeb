@@ -14,8 +14,8 @@ public class User : BaseEntity
     public bool IsPhoneVerified { get; set; } = false;
     
     // Navigation properties
-    public CustomerProfile? CustomerProfile { get; set; }
-    public CaregiverProfile? CaregiverProfile { get; set; }
+    public Customer? Customer { get; set; }
+    public Caregiver? Caregiver { get; set; }
     public Wallet? Wallet { get; set; }
     public ICollection<RefreshToken> RefreshTokens { get; set; } = new List<RefreshToken>();
     public ICollection<Notification> Notifications { get; set; } = new List<Notification>();

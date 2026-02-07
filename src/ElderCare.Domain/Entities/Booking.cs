@@ -4,8 +4,8 @@ namespace ElderCare.Domain.Entities;
 
 public class Booking : BaseEntity
 {
-    public Guid CustomerProfileId { get; set; }
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CustomerId { get; set; }
+    public Guid CaregiverId { get; set; }
     public Guid BeneficiaryId { get; set; }
     
     // Schedule
@@ -46,8 +46,8 @@ public class Booking : BaseEntity
     public double? AiMatchScore { get; set; }
     
     // Navigation properties
-    public CustomerProfile CustomerProfile { get; set; } = null!;
-    public CaregiverProfile CaregiverProfile { get; set; } = null!;
+    public Customer Customer { get; set; } = null!;
+    public Caregiver Caregiver { get; set; } = null!;
     public Beneficiary Beneficiary { get; set; } = null!;
     public Review? Review { get; set; }
     public Dispute? Dispute { get; set; }

@@ -98,3 +98,51 @@ public enum NotificationPriority
     Medium = 1,
     High = 2
 }
+
+// AI Caregiver Assistant Enums
+public enum MoodLevel
+{
+    VeryLow = 1,
+    Low = 2,
+    Neutral = 3,
+    Good = 4,
+    Excellent = 5
+}
+
+public enum ActivityCategory
+{
+    Physical,        // Exercise, walking, stretching
+    Mental,          // Puzzles, reading, memory games
+    Social,          // Conversation, group activities
+    Creative,        // Art, music, crafts
+    Recreational,    // Games, hobbies
+    Spiritual,       // Prayer, meditation
+    Domestic,        // Cooking, gardening
+    Entertainment    // TV, movies, music listening
+}
+
+public enum DifficultyLevel
+{
+    VeryEasy = 1,
+    Easy = 2,
+    Moderate = 3,
+    Challenging = 4,
+    Difficult = 5
+}
+
+// Chat System Enums
+public enum ConversationType
+{
+    OneOnOne = 0,    // 1-on-1 chat between 2 users
+    Group = 1,       // Group chat (future)
+    Support = 2      // Customer support chat
+}
+
+public enum MessageStatus
+{
+    Sent = 0,        // Message sent but not delivered
+    Delivered = 1,   // Message delivered to recipient
+    Read = 2         // Message read by recipient
+}
+
+

@@ -73,8 +73,8 @@ public class UserRepository : Repository<User>, IUserRepository
     public async Task<User?> GetByEmailAsync(string email, CancellationToken cancellationToken = default)
     {
         return await _dbSet
-            .Include(u => u.CustomerProfile)
-            .Include(u => u.CaregiverProfile)
+            .Include(u => u.Customer)
+            .Include(u => u.Caregiver)
             .Include(u => u.Wallet)
             .FirstOrDefaultAsync(u => u.Email == email, cancellationToken);
     }
@@ -82,20 +82,20 @@ public class UserRepository : Repository<User>, IUserRepository
     public async Task<User?> GetByPhoneAsync(string phone, CancellationToken cancellationToken = default)
     {
         return await _dbSet
-            .Include(u => u.CustomerProfile)
-            .Include(u => u.CaregiverProfile)
+            .Include(u => u.Customer)
+            .Include(u => u.Caregiver)
             .Include(u => u.Wallet)
             .FirstOrDefaultAsync(u => u.PhoneNumber == phone, cancellationToken);
     }
 }
 
-public class CaregiverRepository : Repository<CaregiverProfile>, ICaregiverRepository
+public class CaregiverRepository : Repository<Caregiver>, ICaregiverRepository
 {
     public CaregiverRepository(ElderCareDbContext context) : base(context)
     {
     }
 
-    public async Task<CaregiverProfile?> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
+    public async Task<Caregiver?> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default)
     {
         return await _dbSet
             .Include(c => c.Skills)
@@ -104,7 +104,7 @@ public class CaregiverRepository : Repository<CaregiverProfile>, ICaregiverRepos
             .FirstOrDefaultAsync(c => c.UserId == userId, cancellationToken);
     }
 
-    public async Task<IEnumerable<CaregiverProfile>> GetApprovedCaregiversAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<Caregiver>> GetApprovedCaregiversAsync(CancellationToken cancellationToken = default)
     {
         return await _dbSet
             .Include(c => c.Skills)
@@ -113,7 +113,7 @@ public class CaregiverRepository : Repository<CaregiverProfile>, ICaregiverRepos
             .ToListAsync(cancellationToken);
     }
 
-    public async Task<IEnumerable<CaregiverProfile>> GetPendingCaregiversAsync(CancellationToken cancellationToken = default)
+    public async Task<IEnumerable<Caregiver>> GetPendingCaregiversAsync(CancellationToken cancellationToken = default)
     {
         return await _dbSet
             .Include(c => c.User)
@@ -132,10 +132,10 @@ public class BookingRepository : Repository<Booking>, IBookingRepository
     public async Task<IEnumerable<Booking>> GetByCustomerIdAsync(Guid customerId, CancellationToken cancellationToken = default)
     {
         return await _dbSet
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .Include(b => b.Review)
-            .Where(b => b.CustomerProfileId == customerId)
+            .Where(b => b.CustomerId == customerId)
             .OrderByDescending(b => b.ScheduledStartTime)
             .ToListAsync(cancellationToken);
     }
@@ -143,10 +143,10 @@ public class BookingRepository : Repository<Booking>, IBookingRepository
     public async Task<IEnumerable<Booking>> GetByCaregiverIdAsync(Guid caregiverId, CancellationToken cancellationToken = default)
     {
         return await _dbSet
-            .Include(b => b.CustomerProfile)
+            .Include(b => b.Customer)
             .Include(b => b.Beneficiary)
             .Include(b => b.Review)
-            .Where(b => b.CaregiverProfileId == caregiverId)
+            .Where(b => b.CaregiverId == caregiverId)
             .OrderByDescending(b => b.ScheduledStartTime)
             .ToListAsync(cancellationToken);
     }
@@ -154,8 +154,8 @@ public class BookingRepository : Repository<Booking>, IBookingRepository
     public async Task<IEnumerable<Booking>> GetByStatusAsync(Domain.Enums.BookingStatus status, CancellationToken cancellationToken = default)
     {
         return await _dbSet
-            .Include(b => b.CustomerProfile)
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Customer)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .Where(b => b.Status == status)
             .OrderByDescending(b => b.ScheduledStartTime)

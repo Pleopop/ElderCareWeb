@@ -2,7 +2,7 @@ using ElderCare.Domain.Enums;
 
 namespace ElderCare.Domain.Entities;
 
-public class CaregiverProfile : BaseEntity
+public class Caregiver : BaseEntity
 {
     public Guid UserId { get; set; }
     public string FullName { get; set; } = string.Empty;
@@ -40,29 +40,29 @@ public class CaregiverProfile : BaseEntity
 
 public class CaregiverSkill : BaseEntity
 {
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     public string SkillName { get; set; } = string.Empty;
     public string? Description { get; set; }
     public int ProficiencyLevel { get; set; } = 1; // 1-5
     public string? CertificateUrl { get; set; }
     
-    public CaregiverProfile CaregiverProfile { get; set; } = null!;
+    public Caregiver Caregiver { get; set; } = null!;
 }
 
 public class CaregiverAvailability : BaseEntity
 {
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     public DayOfWeek DayOfWeek { get; set; }
     public TimeSpan StartTime { get; set; }
     public TimeSpan EndTime { get; set; }
     public bool IsAvailable { get; set; } = true;
     
-    public CaregiverProfile CaregiverProfile { get; set; } = null!;
+    public Caregiver Caregiver { get; set; } = null!;
 }
 
 public class PersonalityAssessment : BaseEntity
 {
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     public string? PersonalityType { get; set; }
     public int? ExtroversionScore { get; set; }
     public int? PatienceScore { get; set; }
@@ -72,5 +72,5 @@ public class PersonalityAssessment : BaseEntity
     public string? AssessmentJson { get; set; }
     public DateTime CompletedAt { get; set; }
     
-    public CaregiverProfile CaregiverProfile { get; set; } = null!;
+    public Caregiver Caregiver { get; set; } = null!;
 }

@@ -12,11 +12,11 @@ public record GetTopMatchesQuery(Guid BeneficiaryId, int TopN = 10) : IRequest<R
 public class GetTopMatchesQueryHandler : IRequestHandler<GetTopMatchesQuery, Result<List<MatchingResultDto>>>
 {
     private readonly IRepository<MatchingResult> _matchingRepo;
-    private readonly IRepository<CaregiverProfile> _caregiverRepo;
+    private readonly IRepository<Caregiver> _caregiverRepo;
 
     public GetTopMatchesQueryHandler(
         IRepository<MatchingResult> matchingRepo,
-        IRepository<CaregiverProfile> caregiverRepo)
+        IRepository<Caregiver> caregiverRepo)
     {
         _matchingRepo = matchingRepo;
         _caregiverRepo = caregiverRepo;
@@ -38,18 +38,18 @@ public class GetTopMatchesQueryHandler : IRequestHandler<GetTopMatchesQuery, Res
             .ToList();
 
         // Get caregiver details
-        var caregiverIds = topMatches.Select(m => m.CaregiverProfileId).ToList();
+        var caregiverIds = topMatches.Select(m => m.CaregiverId).ToList();
         var caregivers = await _caregiverRepo.GetAllAsync(c => caregiverIds.Contains(c.Id));
 
         // Map to DTOs
         var dtos = topMatches.Select(m =>
         {
-            var caregiver = caregivers.FirstOrDefault(c => c.Id == m.CaregiverProfileId);
+            var caregiver = caregivers.FirstOrDefault(c => c.Id == m.CaregiverId);
             if (caregiver == null) return null;
 
             return new MatchingResultDto
             {
-                CaregiverProfileId = m.CaregiverProfileId,
+                CaregiverId = m.CaregiverId,
                 CaregiverName = caregiver.FullName,
                 OverallScore = m.OverallScore,
                 PersonalityScore = m.PersonalityScore,

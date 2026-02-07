@@ -14,14 +14,14 @@ public record CalculateMatchCommand(Guid BeneficiaryId) : IRequest<Result<List<M
 public class CalculateMatchCommandHandler : IRequestHandler<CalculateMatchCommand, Result<List<MatchingResultDto>>>
 {
     private readonly IRepository<Beneficiary> _beneficiaryRepo;
-    private readonly IRepository<CaregiverProfile> _caregiverRepo;
+    private readonly IRepository<Caregiver> _caregiverRepo;
     private readonly IRepository<MatchingResult> _matchingRepo;
     private readonly IMatchingService _matchingService;
     private readonly IUnitOfWork _unitOfWork;
 
     public CalculateMatchCommandHandler(
         IRepository<Beneficiary> beneficiaryRepo,
-        IRepository<CaregiverProfile> caregiverRepo,
+        IRepository<Caregiver> caregiverRepo,
         IRepository<MatchingResult> matchingRepo,
         IMatchingService matchingService,
         IUnitOfWork unitOfWork)
@@ -81,10 +81,10 @@ public class CalculateMatchCommandHandler : IRequestHandler<CalculateMatchComman
             .OrderByDescending(m => m.OverallScore)
             .Select(m =>
             {
-                var caregiver = caregivers.First(c => c.Id == m.CaregiverProfileId);
+                var caregiver = caregivers.First(c => c.Id == m.CaregiverId);
                 return new MatchingResultDto
                 {
-                    CaregiverProfileId = m.CaregiverProfileId,
+                    CaregiverId = m.CaregiverId,
                     CaregiverName = caregiver.FullName,
                     OverallScore = m.OverallScore,
                     PersonalityScore = m.PersonalityScore,

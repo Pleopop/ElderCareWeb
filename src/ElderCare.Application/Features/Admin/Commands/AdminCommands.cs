@@ -43,7 +43,7 @@ public class GetPendingCaregiversQueryHandler : IRequestHandler<GetPendingCaregi
 }
 
 // Approve Caregiver Command
-public record ApproveCaregiverCommand(Guid CaregiverProfileId) : IRequest<Result<CaregiverApprovalDto>>;
+public record ApproveCaregiverCommand(Guid CaregiverId) : IRequest<Result<CaregiverApprovalDto>>;
 
 public class ApproveCaregiverCommandHandler : IRequestHandler<ApproveCaregiverCommand, Result<CaregiverApprovalDto>>
 {
@@ -60,7 +60,7 @@ public class ApproveCaregiverCommandHandler : IRequestHandler<ApproveCaregiverCo
     {
         var caregiver = await _unitOfWork.Caregivers.Query()
             .Include(c => c.User)
-            .FirstOrDefaultAsync(c => c.Id == request.CaregiverProfileId, cancellationToken);
+            .FirstOrDefaultAsync(c => c.Id == request.CaregiverId, cancellationToken);
 
         if (caregiver == null)
             return Result<CaregiverApprovalDto>.Failure("Not found", "Caregiver not found");
@@ -105,7 +105,7 @@ public class RejectCaregiverCommandHandler : IRequestHandler<RejectCaregiverComm
     {
         var caregiver = await _unitOfWork.Caregivers.Query()
             .Include(c => c.User)
-            .FirstOrDefaultAsync(c => c.Id == request.Request.CaregiverProfileId, cancellationToken);
+            .FirstOrDefaultAsync(c => c.Id == request.Request.CaregiverId, cancellationToken);
 
         if (caregiver == null)
             return Result<CaregiverApprovalDto>.Failure("Not found", "Caregiver not found");

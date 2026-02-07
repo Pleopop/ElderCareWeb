@@ -18,7 +18,7 @@ public class CreateBookingCommandValidator : AbstractValidator<CreateBookingComm
     public CreateBookingCommandValidator()
     {
         RuleFor(x => x.Request.BeneficiaryId).NotEmpty();
-        RuleFor(x => x.Request.CaregiverProfileId).NotEmpty();
+        RuleFor(x => x.Request.CaregiverId).NotEmpty();
         RuleFor(x => x.Request.ScheduledStartTime).GreaterThan(DateTime.UtcNow);
         RuleFor(x => x.Request.ScheduledEndTime).GreaterThan(x => x.Request.ScheduledStartTime);
         RuleFor(x => x.Request.ServiceLocation).NotEmpty().MaximumLength(500);
@@ -42,19 +42,19 @@ public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand,
             return Result<BookingDto>.Failure("Unauthorized", "User not authenticated");
 
         // Get customer profile
-        var customerProfile = await _unitOfWork.CustomerProfiles.Query()
+        var Customer = await _unitOfWork.Customers.Query()
             .FirstOrDefaultAsync(c => c.UserId == _currentUserService.UserId.Value, cancellationToken);
 
-        if (customerProfile == null)
+        if (Customer == null)
             return Result<BookingDto>.Failure("Not found", "Customer profile not found");
 
         // Verify beneficiary belongs to customer
         var beneficiary = await _unitOfWork.Beneficiaries.GetByIdAsync(request.Request.BeneficiaryId, cancellationToken);
-        if (beneficiary == null || beneficiary.CustomerProfileId != customerProfile.Id)
+        if (beneficiary == null || beneficiary.CustomerId != Customer.Id)
             return Result<BookingDto>.Failure("Invalid", "Beneficiary not found or does not belong to you");
 
         // Verify caregiver exists and is approved
-        var caregiver = await _unitOfWork.Caregivers.GetByIdAsync(request.Request.CaregiverProfileId, cancellationToken);
+        var caregiver = await _unitOfWork.Caregivers.GetByIdAsync(request.Request.CaregiverId, cancellationToken);
         if (caregiver == null || caregiver.VerificationStatus != VerificationStatus.Approved)
             return Result<BookingDto>.Failure("Invalid", "Caregiver not available");
 
@@ -66,8 +66,8 @@ public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand,
 
         var booking = new Booking
         {
-            CustomerProfileId = customerProfile.Id,
-            CaregiverProfileId = request.Request.CaregiverProfileId,
+            CustomerId = Customer.Id,
+            CaregiverId = request.Request.CaregiverId,
             BeneficiaryId = request.Request.BeneficiaryId,
             ScheduledStartTime = request.Request.ScheduledStartTime,
             ScheduledEndTime = request.Request.ScheduledEndTime,
@@ -87,9 +87,9 @@ public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand,
         var dto = new BookingDto
         {
             Id = booking.Id,
-            CustomerProfileId = customerProfile.Id,
-            CustomerName = customerProfile.FullName,
-            CaregiverProfileId = caregiver.Id,
+            CustomerId = Customer.Id,
+            CustomerName = Customer.FullName,
+            CaregiverId = caregiver.Id,
             CaregiverName = caregiver.FullName,
             BeneficiaryId = beneficiary.Id,
             BeneficiaryName = beneficiary.FullName,
@@ -123,8 +123,8 @@ public class AcceptBookingCommandHandler : IRequestHandler<AcceptBookingCommand,
     public async Task<Result<BookingDto>> Handle(AcceptBookingCommand request, CancellationToken cancellationToken)
     {
         var booking = await _unitOfWork.Bookings.Query()
-            .Include(b => b.CustomerProfile)
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Customer)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .FirstOrDefaultAsync(b => b.Id == request.BookingId, cancellationToken);
 
@@ -132,10 +132,10 @@ public class AcceptBookingCommandHandler : IRequestHandler<AcceptBookingCommand,
             return Result<BookingDto>.Failure("Not found", "Booking not found");
 
         // Verify caregiver
-        var caregiverProfile = await _unitOfWork.Caregivers.Query()
+        var Caregiver = await _unitOfWork.Caregivers.Query()
             .FirstOrDefaultAsync(c => c.UserId == _currentUserService.UserId, cancellationToken);
 
-        if (caregiverProfile == null || booking.CaregiverProfileId != caregiverProfile.Id)
+        if (Caregiver == null || booking.CaregiverId != Caregiver.Id)
             return Result<BookingDto>.Failure("Unauthorized", "Not authorized to accept this booking");
 
         if (booking.Status != BookingStatus.Pending)
@@ -147,10 +147,10 @@ public class AcceptBookingCommandHandler : IRequestHandler<AcceptBookingCommand,
         var dto = new BookingDto
         {
             Id = booking.Id,
-            CustomerProfileId = booking.CustomerProfile.Id,
-            CustomerName = booking.CustomerProfile.FullName,
-            CaregiverProfileId = booking.CaregiverProfile.Id,
-            CaregiverName = booking.CaregiverProfile.FullName,
+            CustomerId = booking.Customer.Id,
+            CustomerName = booking.Customer.FullName,
+            CaregiverId = booking.Caregiver.Id,
+            CaregiverName = booking.Caregiver.FullName,
             BeneficiaryId = booking.Beneficiary.Id,
             BeneficiaryName = booking.Beneficiary.FullName,
             ScheduledStartTime = booking.ScheduledStartTime,
@@ -182,8 +182,8 @@ public class CancelBookingCommandHandler : IRequestHandler<CancelBookingCommand,
     public async Task<Result<BookingDto>> Handle(CancelBookingCommand request, CancellationToken cancellationToken)
     {
         var booking = await _unitOfWork.Bookings.Query()
-            .Include(b => b.CustomerProfile)
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Customer)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .FirstOrDefaultAsync(b => b.Id == request.BookingId, cancellationToken);
 
@@ -197,10 +197,10 @@ public class CancelBookingCommandHandler : IRequestHandler<CancelBookingCommand,
         var dto = new BookingDto
         {
             Id = booking.Id,
-            CustomerProfileId = booking.CustomerProfile.Id,
-            CustomerName = booking.CustomerProfile.FullName,
-            CaregiverProfileId = booking.CaregiverProfile.Id,
-            CaregiverName = booking.CaregiverProfile.FullName,
+            CustomerId = booking.Customer.Id,
+            CustomerName = booking.Customer.FullName,
+            CaregiverId = booking.Caregiver.Id,
+            CaregiverName = booking.Caregiver.FullName,
             BeneficiaryId = booking.Beneficiary.Id,
             BeneficiaryName = booking.Beneficiary.FullName,
             ScheduledStartTime = booking.ScheduledStartTime,
@@ -230,8 +230,8 @@ public class CheckInCommandHandler : IRequestHandler<CheckInCommand, Result<Book
     public async Task<Result<BookingDto>> Handle(CheckInCommand request, CancellationToken cancellationToken)
     {
         var booking = await _unitOfWork.Bookings.Query()
-            .Include(b => b.CustomerProfile)
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Customer)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .FirstOrDefaultAsync(b => b.Id == request.Request.BookingId, cancellationToken);
 
@@ -252,10 +252,10 @@ public class CheckInCommandHandler : IRequestHandler<CheckInCommand, Result<Book
         var dto = new BookingDto
         {
             Id = booking.Id,
-            CustomerProfileId = booking.CustomerProfile.Id,
-            CustomerName = booking.CustomerProfile.FullName,
-            CaregiverProfileId = booking.CaregiverProfile.Id,
-            CaregiverName = booking.CaregiverProfile.FullName,
+            CustomerId = booking.Customer.Id,
+            CustomerName = booking.Customer.FullName,
+            CaregiverId = booking.Caregiver.Id,
+            CaregiverName = booking.Caregiver.FullName,
             BeneficiaryId = booking.Beneficiary.Id,
             BeneficiaryName = booking.Beneficiary.FullName,
             ScheduledStartTime = booking.ScheduledStartTime,
@@ -286,8 +286,8 @@ public class CheckOutCommandHandler : IRequestHandler<CheckOutCommand, Result<Bo
     public async Task<Result<BookingDto>> Handle(CheckOutCommand request, CancellationToken cancellationToken)
     {
         var booking = await _unitOfWork.Bookings.Query()
-            .Include(b => b.CustomerProfile)
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Customer)
+            .Include(b => b.Caregiver)
             .Include(b => b.Beneficiary)
             .FirstOrDefaultAsync(b => b.Id == request.Request.BookingId, cancellationToken);
 
@@ -308,10 +308,10 @@ public class CheckOutCommandHandler : IRequestHandler<CheckOutCommand, Result<Bo
         var dto = new BookingDto
         {
             Id = booking.Id,
-            CustomerProfileId = booking.CustomerProfile.Id,
-            CustomerName = booking.CustomerProfile.FullName,
-            CaregiverProfileId = booking.CaregiverProfile.Id,
-            CaregiverName = booking.CaregiverProfile.FullName,
+            CustomerId = booking.Customer.Id,
+            CustomerName = booking.Customer.FullName,
+            CaregiverId = booking.Caregiver.Id,
+            CaregiverName = booking.Caregiver.FullName,
             BeneficiaryId = booking.Beneficiary.Id,
             BeneficiaryName = booking.Beneficiary.FullName,
             ScheduledStartTime = booking.ScheduledStartTime,

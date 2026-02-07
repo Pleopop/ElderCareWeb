@@ -4,7 +4,7 @@ namespace ElderCare.Domain.Entities;
 
 public class Beneficiary : BaseEntity
 {
-    public Guid CustomerProfileId { get; set; }
+    public Guid CustomerId { get; set; }
     public string FullName { get; set; } = string.Empty;
     public int Age { get; set; }
     public Gender Gender { get; set; }
@@ -15,7 +15,7 @@ public class Beneficiary : BaseEntity
     public string? Hobbies { get; set; }
     public string? DailyRoutine { get; set; }
     
-    public CustomerProfile CustomerProfile { get; set; } = null!;
+    public Customer Customer { get; set; } = null!;
     public ICollection<Booking> Bookings { get; set; } = new List<Booking>();
     public ICollection<BeneficiaryPreference> Preferences { get; set; } = new List<BeneficiaryPreference>();
 }

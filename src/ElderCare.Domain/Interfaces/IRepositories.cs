@@ -21,11 +21,11 @@ public interface IUserRepository : IRepository<Entities.User>
     Task<Entities.User?> GetByPhoneAsync(string phone, CancellationToken cancellationToken = default);
 }
 
-public interface ICaregiverRepository : IRepository<Entities.CaregiverProfile>
+public interface ICaregiverRepository : IRepository<Entities.Caregiver>
 {
-    Task<Entities.CaregiverProfile?> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
-    Task<IEnumerable<Entities.CaregiverProfile>> GetApprovedCaregiversAsync(CancellationToken cancellationToken = default);
-    Task<IEnumerable<Entities.CaregiverProfile>> GetPendingCaregiversAsync(CancellationToken cancellationToken = default);
+    Task<Entities.Caregiver?> GetByUserIdAsync(Guid userId, CancellationToken cancellationToken = default);
+    Task<IEnumerable<Entities.Caregiver>> GetApprovedCaregiversAsync(CancellationToken cancellationToken = default);
+    Task<IEnumerable<Entities.Caregiver>> GetPendingCaregiversAsync(CancellationToken cancellationToken = default);
 }
 
 public interface IBookingRepository : IRepository<Entities.Booking>
@@ -39,7 +39,7 @@ public interface IUnitOfWork : IDisposable
 {
     IRepository<T> Repository<T>() where T : class;
     IUserRepository Users { get; }
-    IRepository<Entities.CustomerProfile> CustomerProfiles { get; }
+    IRepository<Entities.Customer> Customers { get; }
     IRepository<Entities.Beneficiary> Beneficiaries { get; }
     ICaregiverRepository Caregivers { get; }
     IBookingRepository Bookings { get; }

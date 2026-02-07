@@ -121,7 +121,7 @@ public class HoldEscrowCommandHandler : IRequestHandler<HoldEscrowCommand, Resul
 
         // Get customer's wallet
         var customerWallet = await _walletRepo.FirstOrDefaultAsync(w => 
-            w.User.CustomerProfile != null && w.User.CustomerProfile.Id == booking.CustomerProfileId);
+            w.User.Customer != null && w.User.Customer.Id == booking.CustomerId);
         
         if (customerWallet == null)
             return Result<TransactionDto>.Failure("Customer wallet not found");
@@ -223,10 +223,10 @@ public class ReleaseEscrowCommandHandler : IRequestHandler<ReleaseEscrowCommand,
 
         // Get wallets
         var customerWallet = await _walletRepo.FirstOrDefaultAsync(w => 
-            w.User.CustomerProfile != null && w.User.CustomerProfile.Id == booking.CustomerProfileId);
+            w.User.Customer != null && w.User.Customer.Id == booking.CustomerId);
         
         var caregiverWallet = await _walletRepo.FirstOrDefaultAsync(w => 
-            w.User.CaregiverProfile != null && w.User.CaregiverProfile.Id == booking.CaregiverProfileId);
+            w.User.Caregiver != null && w.User.Caregiver.Id == booking.CaregiverId);
 
         if (customerWallet == null || caregiverWallet == null)
             return Result<List<TransactionDto>>.Failure("Wallet not found");
@@ -335,7 +335,7 @@ public class RefundEscrowCommandHandler : IRequestHandler<RefundEscrowCommand, R
 
         // Get customer wallet
         var customerWallet = await _walletRepo.FirstOrDefaultAsync(w => 
-            w.User.CustomerProfile != null && w.User.CustomerProfile.Id == booking.CustomerProfileId);
+            w.User.Customer != null && w.User.Customer.Id == booking.CustomerId);
 
         if (customerWallet == null)
             return Result<TransactionDto>.Failure("Customer wallet not found");

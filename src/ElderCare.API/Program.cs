@@ -1,5 +1,7 @@
 using System.Text;
 using ElderCare.Application;
+using ElderCare.Application.Common.Interfaces;
+using ElderCare.Application.Services;
 using ElderCare.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -98,6 +100,12 @@ builder.Services.AddHttpContextAccessor();
 // Application & Infrastructure layers
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddScoped<IMatchingService, MatchingService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
+builder.Services.AddScoped<ICaregiverAssistantService, MLNetCaregiverAssistantService>();
+builder.Services.AddScoped<IChatService, ChatService>();
+
+
 
 var app = builder.Build();
 
@@ -122,8 +130,8 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Map SignalR Hubs
+// Map SignalR hubs
 app.MapHub<ElderCare.API.Hubs.NotificationHub>("/hubs/notifications");
+app.MapHub<ElderCare.API.Hubs.ChatHub>("/hubs/chat");
 
 app.Run();
-

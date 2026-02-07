@@ -14,12 +14,12 @@ public class ElderCareDbContext : DbContext
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
     
     // Customer
-    public DbSet<CustomerProfile> CustomerProfiles => Set<CustomerProfile>();
+    public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<Beneficiary> Beneficiaries => Set<Beneficiary>();
     public DbSet<BeneficiaryPreference> BeneficiaryPreferences => Set<BeneficiaryPreference>();
     
     // Caregiver
-    public DbSet<CaregiverProfile> CaregiverProfiles => Set<CaregiverProfile>();
+    public DbSet<Caregiver> Caregivers => Set<Caregiver>();
     public DbSet<CaregiverSkill> CaregiverSkills => Set<CaregiverSkill>();
     public DbSet<CaregiverAvailability> CaregiverAvailabilities => Set<CaregiverAvailability>();
     public DbSet<PersonalityAssessment> PersonalityAssessments => Set<PersonalityAssessment>();
@@ -42,6 +42,18 @@ public class ElderCareDbContext : DbContext
     
     // Notifications
     public DbSet<Notification> Notifications => Set<Notification>();
+    
+    // AI Caregiver Assistant
+    public DbSet<CareNote> CareNotes => Set<CareNote>();
+    public DbSet<ActivitySuggestion> ActivitySuggestions => Set<ActivitySuggestion>();
+    public DbSet<DailyReport> DailyReports => Set<DailyReport>();
+    
+    // Chat System
+    public DbSet<Conversation> Conversations => Set<Conversation>();
+    public DbSet<ConversationParticipant> ConversationParticipants => Set<ConversationParticipant>();
+    public DbSet<Message> Messages => Set<Message>();
+
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -52,8 +64,8 @@ public class ElderCareDbContext : DbContext
         
         // Global query filter for soft delete
         modelBuilder.Entity<User>().HasQueryFilter(e => !e.IsDeleted);
-        modelBuilder.Entity<CustomerProfile>().HasQueryFilter(e => !e.IsDeleted);
-        modelBuilder.Entity<CaregiverProfile>().HasQueryFilter(e => !e.IsDeleted);
+        modelBuilder.Entity<Customer>().HasQueryFilter(e => !e.IsDeleted);
+        modelBuilder.Entity<Caregiver>().HasQueryFilter(e => !e.IsDeleted);
         modelBuilder.Entity<Beneficiary>().HasQueryFilter(e => !e.IsDeleted);
         modelBuilder.Entity<Booking>().HasQueryFilter(e => !e.IsDeleted);
     }

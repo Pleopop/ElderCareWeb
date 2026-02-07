@@ -43,8 +43,8 @@ public interface IMatchingService
 {
     Task<MatchingResult> CalculateMatchAsync(
         Guid beneficiaryId,
-        Guid caregiverProfileId,
-        CaregiverProfile caregiver,
+        Guid CaregiverId,
+        Caregiver caregiver,
         Beneficiary beneficiary);
 }
 

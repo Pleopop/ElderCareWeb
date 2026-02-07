@@ -3,7 +3,7 @@ namespace ElderCare.Domain.Entities;
 public class MatchingResult : BaseEntity
 {
     public Guid BeneficiaryId { get; set; }
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     
     // Overall compatibility score (0-100)
     public double OverallScore { get; set; }
@@ -20,5 +20,5 @@ public class MatchingResult : BaseEntity
     
     // Navigation properties
     public Beneficiary Beneficiary { get; set; } = null!;
-    public CaregiverProfile CaregiverProfile { get; set; } = null!;
+    public Caregiver Caregiver { get; set; } = null!;
 }

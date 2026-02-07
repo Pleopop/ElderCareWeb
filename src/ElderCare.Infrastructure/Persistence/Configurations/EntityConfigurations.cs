@@ -19,14 +19,14 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasIndex(u => u.Email).IsUnique();
         builder.HasIndex(u => u.PhoneNumber).IsUnique();
         
-        builder.HasOne(u => u.CustomerProfile)
+        builder.HasOne(u => u.Customer)
             .WithOne(c => c.User)
-            .HasForeignKey<CustomerProfile>(c => c.UserId)
+            .HasForeignKey<Customer>(c => c.UserId)
             .OnDelete(DeleteBehavior.Cascade);
             
-        builder.HasOne(u => u.CaregiverProfile)
+        builder.HasOne(u => u.Caregiver)
             .WithOne(c => c.User)
-            .HasForeignKey<CaregiverProfile>(c => c.UserId)
+            .HasForeignKey<Caregiver>(c => c.UserId)
             .OnDelete(DeleteBehavior.Cascade);
             
         builder.HasOne(u => u.Wallet)
@@ -36,11 +36,11 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
     }
 }
 
-public class CustomerProfileConfiguration : IEntityTypeConfiguration<CustomerProfile>
+public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
 {
-    public void Configure(EntityTypeBuilder<CustomerProfile> builder)
+    public void Configure(EntityTypeBuilder<Customer> builder)
     {
-        builder.ToTable("CustomerProfiles");
+        builder.ToTable("Customers");
         builder.HasKey(c => c.Id);
         
         builder.Property(c => c.FullName).IsRequired().HasMaxLength(200);
@@ -52,11 +52,11 @@ public class CustomerProfileConfiguration : IEntityTypeConfiguration<CustomerPro
     }
 }
 
-public class CaregiverProfileConfiguration : IEntityTypeConfiguration<CaregiverProfile>
+public class CaregiverConfiguration : IEntityTypeConfiguration<Caregiver>
 {
-    public void Configure(EntityTypeBuilder<CaregiverProfile> builder)
+    public void Configure(EntityTypeBuilder<Caregiver> builder)
     {
-        builder.ToTable("CaregiverProfiles");
+        builder.ToTable("Caregivers");
         builder.HasKey(c => c.Id);
         
         builder.Property(c => c.FullName).IsRequired().HasMaxLength(200);
@@ -89,9 +89,9 @@ public class BeneficiaryConfiguration : IEntityTypeConfiguration<Beneficiary>
         builder.Property(b => b.Hobbies).HasMaxLength(1000);
         builder.Property(b => b.DailyRoutine).HasMaxLength(2000);
         
-        builder.HasOne(b => b.CustomerProfile)
+        builder.HasOne(b => b.Customer)
             .WithMany(c => c.Beneficiaries)
-            .HasForeignKey(b => b.CustomerProfileId)
+            .HasForeignKey(b => b.CustomerId)
             .OnDelete(DeleteBehavior.Cascade);
     }
 }
@@ -114,17 +114,17 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         
         builder.HasIndex(b => b.Status);
         builder.HasIndex(b => b.ScheduledStartTime);
-        builder.HasIndex(b => new { b.CustomerProfileId, b.Status });
-        builder.HasIndex(b => new { b.CaregiverProfileId, b.Status });
+        builder.HasIndex(b => new { b.CustomerId, b.Status });
+        builder.HasIndex(b => new { b.CaregiverId, b.Status });
         
-        builder.HasOne(b => b.CustomerProfile)
+        builder.HasOne(b => b.Customer)
             .WithMany(c => c.Bookings)
-            .HasForeignKey(b => b.CustomerProfileId)
+            .HasForeignKey(b => b.CustomerId)
             .OnDelete(DeleteBehavior.Restrict);
             
-        builder.HasOne(b => b.CaregiverProfile)
+        builder.HasOne(b => b.Caregiver)
             .WithMany(c => c.Bookings)
-            .HasForeignKey(b => b.CaregiverProfileId)
+            .HasForeignKey(b => b.CaregiverId)
             .OnDelete(DeleteBehavior.Restrict);
             
         builder.HasOne(b => b.Beneficiary)

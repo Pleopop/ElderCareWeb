@@ -1,6 +1,6 @@
 namespace ElderCare.Domain.Entities;
 
-public class CustomerProfile : BaseEntity
+public class Customer : BaseEntity
 {
     public Guid UserId { get; set; }
     public string FullName { get; set; } = string.Empty;

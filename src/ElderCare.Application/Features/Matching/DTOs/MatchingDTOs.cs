@@ -2,7 +2,7 @@ namespace ElderCare.Application.Features.Matching.DTOs;
 
 public class MatchingResultDto
 {
-    public Guid CaregiverProfileId { get; set; }
+    public Guid CaregiverId { get; set; }
     public string CaregiverName { get; set; } = string.Empty;
     public double OverallScore { get; set; }
     public double PersonalityScore { get; set; }

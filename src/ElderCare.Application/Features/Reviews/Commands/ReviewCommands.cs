@@ -36,7 +36,7 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, R
     public async Task<Result<ReviewDto>> Handle(CreateReviewCommand request, CancellationToken cancellationToken)
     {
         var booking = await _unitOfWork.Bookings.Query()
-            .Include(b => b.CaregiverProfile)
+            .Include(b => b.Caregiver)
             .Include(b => b.Review)
             .FirstOrDefaultAsync(b => b.Id == request.Request.BookingId, cancellationToken);
 
@@ -52,7 +52,7 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, R
         var review = new Review
         {
             BookingId = booking.Id,
-            CaregiverId = booking.CaregiverProfileId,
+            CaregiverId = booking.CaregiverId,
             OverallRating = request.Request.OverallRating,
             PunctualityRating = request.Request.PunctualityRating,
             ProfessionalismRating = request.Request.ProfessionalismRating,
@@ -65,12 +65,12 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, R
 
         // Update caregiver rating
         var allReviews = await _unitOfWork.Reviews.Query()
-            .Where(r => r.CaregiverId == booking.CaregiverProfileId)
+            .Where(r => r.CaregiverId == booking.CaregiverId)
             .ToListAsync(cancellationToken);
 
         allReviews.Add(review);
 
-        var caregiver = booking.CaregiverProfile;
+        var caregiver = booking.Caregiver;
         caregiver.AverageRating = allReviews.Average(r => r.OverallRating);
         caregiver.TotalReviews = allReviews.Count;
 
