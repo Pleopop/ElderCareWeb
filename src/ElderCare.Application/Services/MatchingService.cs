@@ -124,11 +124,11 @@ public class MatchingService : IMatchingService
         var preferences = await _preferenceRepo
             .FirstOrDefaultAsync(p => p.BeneficiaryId == beneficiaryId);
 
-        if (preferences == null || string.IsNullOrEmpty(preferences.RequiredSkills))
+        if (preferences == null || string.IsNullOrEmpty(preferences.SpecialRequirements))
             return 70.0; // Default if no specific requirements
 
-        // Parse required skills (comma-separated)
-        var requiredSkills = preferences.RequiredSkills
+        // Parse special requirements (comma-separated skills/requirements)
+        var requiredSkills = preferences.SpecialRequirements
             .Split(',', StringSplitOptions.RemoveEmptyEntries)
             .Select(s => s.Trim().ToLower())
             .ToList();

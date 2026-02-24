@@ -41,6 +41,7 @@ public interface IUnitOfWork : IDisposable
     IUserRepository Users { get; }
     IRepository<Entities.Customer> Customers { get; }
     IRepository<Entities.Beneficiary> Beneficiaries { get; }
+    IRepository<Entities.BeneficiaryPreference> BeneficiaryPreferences { get; }
     ICaregiverRepository Caregivers { get; }
     IBookingRepository Bookings { get; }
     IRepository<Entities.Review> Reviews { get; }

@@ -62,19 +62,25 @@
           "dependencies": {
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.10, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Serilog.AspNetCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.6.2, )"
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -152,19 +158,19 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.9.0, )"
+              "version": "[11.11.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.9.0, )"
+              "version": "[11.11.0, )"
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[12.4.1, )"
             },
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -172,19 +178,19 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             },
             "Microsoft.ML": {
               "target": "Package",
@@ -196,7 +202,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             }
           },
           "imports": [
@@ -339,7 +345,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -349,27 +355,27 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             }
           },
           "imports": [

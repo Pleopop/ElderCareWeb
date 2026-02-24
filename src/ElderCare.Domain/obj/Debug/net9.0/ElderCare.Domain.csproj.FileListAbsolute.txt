@@ -5,8 +5,8 @@ C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\De
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.AssemblyInfoInputs.cache
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.AssemblyInfo.cs
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.csproj.CoreCompileInputs.cache
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.sourcelink.json
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\refint\ElderCare.Domain.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.pdb
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ref\ElderCare.Domain.dll
-C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.sourcelink.json

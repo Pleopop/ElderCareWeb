@@ -40,6 +40,15 @@ public enum Gender
     Other
 }
 
+public enum MobilityLevel
+{
+    FullyMobile = 0,
+    SlightlyLimited = 1,
+    ModeratelyLimited = 2,
+    SeverelyLimited = 3,
+    Bedridden = 4
+}
+
 public enum CognitiveStatus
 {
     Normal,
@@ -50,10 +59,31 @@ public enum CognitiveStatus
 
 public enum DisputeStatus
 {
-    Open,
+    Pending,
     UnderReview,
+    AwaitingEvidence,
     Resolved,
-    Closed
+    Rejected,
+    Withdrawn
+}
+
+public enum DisputeType
+{
+    ServiceQuality,
+    Payment,
+    Safety,
+    NoShow,
+    Cancellation,
+    Other
+}
+
+public enum EvidenceType
+{
+    Image,
+    Document,
+    Screenshot,
+    Video,
+    Other
 }
 
 public enum TransactionType
@@ -138,6 +168,7 @@ public enum ConversationType
     Support = 2      // Customer support chat
 }
 
+
 public enum MessageStatus
 {
     Sent = 0,        // Message sent but not delivered
@@ -145,4 +176,10 @@ public enum MessageStatus
     Read = 2         // Message read by recipient
 }
 
-
+// Verification
+public enum VerificationType
+{
+    Email = 0,
+    Phone = 1,
+    PasswordReset = 2
+}

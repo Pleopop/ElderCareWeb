@@ -50,7 +50,7 @@ public class Booking : BaseEntity
     public Caregiver Caregiver { get; set; } = null!;
     public Beneficiary Beneficiary { get; set; } = null!;
     public Review? Review { get; set; }
-    public Dispute? Dispute { get; set; }
+    public virtual Dispute? Dispute { get; set; }
     public ICollection<Transaction> Transactions { get; set; } = new List<Transaction>();
     public ICollection<LocationLog> LocationLogs { get; set; } = new List<LocationLog>();
 }

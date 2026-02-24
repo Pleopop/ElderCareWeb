@@ -1,0 +1,1441 @@
+[
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "MarkActivityCompleted",
+    "RelativePath": "api/caregiver-assistant/activity-suggestions/{activityId}/complete",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "activityId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.CompleteActivityRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.CaregiverAssistant.DTOs.ActivitySuggestionDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GenerateActivitySuggestions",
+    "RelativePath": "api/caregiver-assistant/activity-suggestions/{beneficiaryId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.CaregiverAssistant.DTOs.ActivitySuggestionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GetActiveSuggestions",
+    "RelativePath": "api/caregiver-assistant/activity-suggestions/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.CaregiverAssistant.DTOs.ActivitySuggestionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "CreateCareNote",
+    "RelativePath": "api/caregiver-assistant/care-notes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.CreateCareNoteRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.CaregiverAssistant.DTOs.CareNoteDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GetCareNotes",
+    "RelativePath": "api/caregiver-assistant/care-notes/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.CaregiverAssistant.DTOs.CareNoteDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GetConversationStarters",
+    "RelativePath": "api/caregiver-assistant/conversation-starters/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.CaregiverAssistant.DTOs.ConversationStarterDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GenerateDailyReport",
+    "RelativePath": "api/caregiver-assistant/daily-reports",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.GenerateReportRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.CaregiverAssistant.DTOs.DailyReportDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GetDailyReports",
+    "RelativePath": "api/caregiver-assistant/daily-reports/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.CaregiverAssistant.DTOs.DailyReportDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "ApproveDailyReport",
+    "RelativePath": "api/caregiver-assistant/daily-reports/{reportId}/approve",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "reportId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.ApproveReportRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.CaregiverAssistant.DTOs.DailyReportDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverAssistantController",
+    "Method": "GetMoodTrend",
+    "RelativePath": "api/caregiver-assistant/mood-trend/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "days",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.CaregiverAssistant.DTOs.MoodTrendDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "GetConversations",
+    "RelativePath": "api/chat/conversations",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.Chat.DTOs.ConversationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "CreateConversation",
+    "RelativePath": "api/chat/conversations",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Chat.DTOs.CreateConversationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.Chat.DTOs.ConversationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "GetConversation",
+    "RelativePath": "api/chat/conversations/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.Chat.DTOs.ConversationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "ArchiveConversation",
+    "RelativePath": "api/chat/conversations/{id}/archive",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/chat/conversations/{id}/mark-read",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "GetMessages",
+    "RelativePath": "api/chat/conversations/{id}/messages",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.Chat.DTOs.MessageDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "SendMessage",
+    "RelativePath": "api/chat/conversations/{id}/messages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Chat.DTOs.SendMessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.Chat.DTOs.MessageDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "EditMessage",
+    "RelativePath": "api/chat/messages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Chat.DTOs.EditMessageRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.Chat.DTOs.MessageDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "DeleteMessage",
+    "RelativePath": "api/chat/messages/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatController",
+    "Method": "GetUnreadCount",
+    "RelativePath": "api/chat/unread-count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "GetAlerts",
+    "RelativePath": "api/fraud-detection/alerts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "CreateAlert",
+    "RelativePath": "api/fraud-detection/alerts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.CreateAlertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "ResolveAlert",
+    "RelativePath": "api/fraud-detection/alerts/{id}/resolve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.API.Controllers.ResolveAlertRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "CalculateFraudScore",
+    "RelativePath": "api/fraud-detection/scores/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "GetFraudScoreHistory",
+    "RelativePath": "api/fraud-detection/scores/{userId}/history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.FraudDetectionController",
+    "Method": "GetSuspiciousActivities",
+    "RelativePath": "api/fraud-detection/suspicious-activities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Nullable\u00601[[System.Guid, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "minRiskScore",
+        "Type": "System.Nullable\u00601[[System.Int32, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "GetMyNotifications",
+    "RelativePath": "api/Notifications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "page",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "isRead",
+        "Type": "System.Nullable\u00601[[System.Boolean, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[ElderCare.Application.Features.Notifications.DTOs.NotificationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "SendNotification",
+    "RelativePath": "api/Notifications",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Notifications.DTOs.SendNotificationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Features.Notifications.DTOs.NotificationDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "DeleteNotification",
+    "RelativePath": "api/Notifications/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "MarkAsRead",
+    "RelativePath": "api/Notifications/{id}/read",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "MarkAllAsRead",
+    "RelativePath": "api/Notifications/read-all",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.NotificationsController",
+    "Method": "GetUnreadCount",
+    "RelativePath": "api/Notifications/unread-count",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Int32",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AdminController",
+    "Method": "ApproveCaregiver",
+    "RelativePath": "api/v1/Admin/caregivers/{id}/approve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AdminController",
+    "Method": "GetPendingCaregivers",
+    "RelativePath": "api/v1/Admin/caregivers/pending",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AdminController",
+    "Method": "RejectCaregiver",
+    "RelativePath": "api/v1/Admin/caregivers/reject",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Admin.DTOs.ApproveRejectRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/v1/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Auth.DTOs.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AuthController",
+    "Method": "GetCurrentUser",
+    "RelativePath": "api/v1/Auth/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AuthController",
+    "Method": "RegisterCaregiver",
+    "RelativePath": "api/v1/Auth/register/caregiver",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Auth.DTOs.RegisterCaregiverRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.AuthController",
+    "Method": "RegisterCustomer",
+    "RelativePath": "api/v1/Auth/register/customer",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Auth.DTOs.RegisterCustomerRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "CreateBooking",
+    "RelativePath": "api/v1/Bookings",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Bookings.DTOs.CreateBookingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "AcceptBooking",
+    "RelativePath": "api/v1/Bookings/{id}/accept",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "CancelBooking",
+    "RelativePath": "api/v1/Bookings/{id}/cancel",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "reason",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "GetCaregiverBookings",
+    "RelativePath": "api/v1/Bookings/caregiver-bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "CheckIn",
+    "RelativePath": "api/v1/Bookings/check-in",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Bookings.DTOs.CheckInRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "CheckOut",
+    "RelativePath": "api/v1/Bookings/check-out",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Bookings.DTOs.CheckOutRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.BookingsController",
+    "Method": "GetMyBookings",
+    "RelativePath": "api/v1/Bookings/my-bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "status",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ChatbotController",
+    "Method": "Ask",
+    "RelativePath": "api/v1/Chatbot/ask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Common.Interfaces.ChatbotRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "CreateBeneficiary",
+    "RelativePath": "api/v1/customers/beneficiaries",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Profiles.DTOs.CreateBeneficiaryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "GetMyBeneficiaries",
+    "RelativePath": "api/v1/customers/beneficiaries",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "UpdateBeneficiaryPreferences",
+    "RelativePath": "api/v1/customers/beneficiaries/{beneficiaryId}/preferences",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Profiles.DTOs.UpdateBeneficiaryPreferencesRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "GetBeneficiaryPreferences",
+    "RelativePath": "api/v1/customers/beneficiaries/{beneficiaryId}/preferences",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "GetBeneficiary",
+    "RelativePath": "api/v1/customers/beneficiaries/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "UpdateBeneficiary",
+    "RelativePath": "api/v1/customers/beneficiaries/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Profiles.DTOs.UpdateBeneficiaryRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CustomersController",
+    "Method": "DeleteBeneficiary",
+    "RelativePath": "api/v1/customers/beneficiaries/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.MatchingController",
+    "Method": "CalculateMatches",
+    "RelativePath": "api/v1/Matching/calculate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Matching.DTOs.CalculateMatchRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.MatchingController",
+    "Method": "GetTopMatches",
+    "RelativePath": "api/v1/Matching/top-matches/{beneficiaryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "beneficiaryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "topN",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "DepositToWallet",
+    "RelativePath": "api/v1/Payments/deposit",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Payments.DTOs.DepositRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Payments.DTOs.WalletDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "HoldEscrow",
+    "RelativePath": "api/v1/Payments/escrow/hold",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Payments.DTOs.HoldEscrowRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Payments.DTOs.TransactionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "RefundEscrow",
+    "RelativePath": "api/v1/Payments/escrow/refund",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Payments.DTOs.RefundEscrowRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Payments.DTOs.TransactionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "ReleaseEscrow",
+    "RelativePath": "api/v1/Payments/escrow/release",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Payments.DTOs.ReleaseEscrowRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[System.Collections.Generic.List\u00601[[ElderCare.Application.Features.Payments.DTOs.TransactionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "GetTransactionHistory",
+    "RelativePath": "api/v1/Payments/transactions",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pageNumber",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "pageSize",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "filterType",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Common.Models.PaginatedList\u00601[[ElderCare.Application.Features.Payments.DTOs.TransactionDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.PaymentsController",
+    "Method": "GetWalletBalance",
+    "RelativePath": "api/v1/Payments/wallet",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Payments.DTOs.WalletDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.ReviewsController",
+    "Method": "CreateReview",
+    "RelativePath": "api/v1/Reviews",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Reviews.DTOs.CreateReviewRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.TrackingController",
+    "Method": "GetCurrentLocation",
+    "RelativePath": "api/v1/Tracking/current/{bookingId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Tracking.DTOs.LocationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.TrackingController",
+    "Method": "GetLocationHistory",
+    "RelativePath": "api/v1/Tracking/history/{bookingId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "from",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      },
+      {
+        "Name": "to",
+        "Type": "System.Nullable\u00601[[System.DateTime, System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[System.Collections.Generic.List\u00601[[ElderCare.Application.Features.Tracking.DTOs.LocationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.TrackingController",
+    "Method": "UpdateLocation",
+    "RelativePath": "api/v1/Tracking/update-location",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Tracking.DTOs.UpdateLocationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Tracking.DTOs.LocationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.TrackingController",
+    "Method": "ValidateGeofence",
+    "RelativePath": "api/v1/Tracking/validate-geofence",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "ElderCare.Application.Features.Tracking.DTOs.ValidateGeofenceRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ElderCare.Application.Common.Models.Result\u00601[[ElderCare.Application.Features.Tracking.DTOs.GeofenceValidationDto, ElderCare.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

@@ -56,19 +56,19 @@
           "dependencies": {
             "FluentValidation": {
               "target": "Package",
-              "version": "[11.9.0, )"
+              "version": "[11.11.0, )"
             },
             "FluentValidation.DependencyInjectionExtensions": {
               "target": "Package",
-              "version": "[11.9.0, )"
+              "version": "[11.11.0, )"
             },
             "MediatR": {
               "target": "Package",
-              "version": "[12.2.0, )"
+              "version": "[12.4.1, )"
             },
             "Microsoft.AspNetCore.Cryptography.KeyDerivation": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -76,19 +76,19 @@
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Caching.Memory": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[9.0.0, )"
             },
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             },
             "Microsoft.ML": {
               "target": "Package",
@@ -100,7 +100,7 @@
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[8.0.0, )"
+              "version": "[8.2.1, )"
             }
           },
           "imports": [

@@ -11,11 +11,11 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 // Serilog
-Log.Logger = new LoggerConfiguration()
-    .ReadFrom.Configuration(builder.Configuration)
-    .CreateLogger();
+//Log.Logger = new LoggerConfiguration()
+//    .ReadFrom.Configuration(builder.Configuration)
+//    .CreateLogger();
 
-builder.Host.UseSerilog();
+//builder.Host.UseSerilog();
 
 // Add services
 builder.Services.AddControllers();
@@ -104,6 +104,8 @@ builder.Services.AddScoped<IMatchingService, MatchingService>();
 builder.Services.AddScoped<INotificationService, NotificationService>();
 builder.Services.AddScoped<ICaregiverAssistantService, MLNetCaregiverAssistantService>();
 builder.Services.AddScoped<IChatService, ChatService>();
+builder.Services.AddScoped<IFraudDetectionService, FraudDetectionService>();
+builder.Services.AddHttpClient<IChatbotService, ChatbotService>();
 
 
 
@@ -119,7 +121,7 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-app.UseSerilogRequestLogging();
+//app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 
@@ -128,10 +130,19 @@ app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();
 
+// Serve SPA static files from wwwroot
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.MapControllers();
 
 // Map SignalR hubs
 app.MapHub<ElderCare.API.Hubs.NotificationHub>("/hubs/notifications");
 app.MapHub<ElderCare.API.Hubs.ChatHub>("/hubs/chat");
 
+// SPA fallback — client-side routing support
+app.MapFallbackToFile("index.html");
+
 app.Run();
+
+

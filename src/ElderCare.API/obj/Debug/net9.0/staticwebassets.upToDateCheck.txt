@@ -1,0 +1,15 @@
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-yeGCcIUH.css
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-ux9Q01vg.js
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-BG51hhMX.js
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-ChuVsAdx.css
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-D226r91T.js
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\assets\index-BNOO_Jpl.js
+C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.API\wwwroot\index.html
+wwwroot\assets\index-BG51hhMX.js
+wwwroot\assets\index-BNOO_Jpl.js
+wwwroot\assets\index-ChuVsAdx.css
+wwwroot\assets\index-D226r91T.js
+wwwroot\assets\index-ux9Q01vg.js
+wwwroot\assets\index-yeGCcIUH.css
+wwwroot\index.html
+wwwroot\Logo.png

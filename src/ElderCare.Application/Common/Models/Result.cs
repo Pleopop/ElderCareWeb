@@ -65,6 +65,16 @@ public class Result<T> : Result
             Errors = new List<string> { error } 
         };
     }
+
+    public new static Result<T> Failure(string message)
+    {
+        return new Result<T> 
+        { 
+            IsSuccess = false, 
+            Message = message, 
+            Errors = new List<string>() 
+        };
+    }
 }
 
 public class PaginatedResult<T>

@@ -1,0 +1,224 @@
+/* ============================================================
+   Layout Styles — Sidebar, Navbar, Content
+   ============================================================ */
+
+/* --- Layout Grid --- */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.layout-main {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left var(--transition-base);
+}
+
+.layout-content {
+    flex: 1;
+    padding: var(--space-xl);
+    animation: fadeIn 0.3s ease;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--bg-sidebar);
+    color: var(--text-inverse);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    transition: transform var(--transition-base);
+    overflow-y: auto;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+}
+
+.sidebar-brand {
+    font-size: var(--font-size-xl);
+    font-weight: 800;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.sidebar-link:hover {
+    background: var(--bg-sidebar-hover);
+    color: var(--text-inverse);
+}
+
+.sidebar-link-active {
+    background: var(--bg-sidebar-active);
+    color: var(--gold-primary) !important;
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    font-size: 1.2rem;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    padding: var(--space-md) var(--space-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.sidebar-user-info {
+    overflow: hidden;
+}
+
+.sidebar-user-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sidebar-user-role {
+    font-size: var(--font-size-xs);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-logout {
+    width: 100%;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: var(--font-size-sm);
+    margin-top: var(--space-sm);
+}
+
+.sidebar-logout:hover {
+    background: rgba(229, 62, 62, 0.15) !important;
+    color: #FC8181 !important;
+}
+
+/* --- Navbar --- */
+.navbar {
+    height: var(--navbar-height);
+    background: var(--bg-secondary);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    padding: 0 var(--space-xl);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 1.3rem;
+    margin-right: var(--space-md);
+}
+
+.navbar-title {
+    flex: 1;
+}
+
+.navbar-logo-mobile {
+    display: none;
+    width: 32px;
+    height: 32px;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.navbar-greeting {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar-open {
+        transform: translateX(0);
+    }
+
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+        animation: fadeIn 0.2s ease;
+    }
+
+    .layout-main {
+        margin-left: 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-logo-mobile {
+        display: block;
+    }
+
+    .layout-content {
+        padding: var(--space-md);
+    }
+}

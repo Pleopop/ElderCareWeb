@@ -20,6 +20,7 @@ public class UnitOfWork : IUnitOfWork
         Users = new UserRepository(_context);
         Customers = new Repository<Customer>(_context);
         Beneficiaries = new Repository<Beneficiary>(_context);
+        BeneficiaryPreferences = new Repository<BeneficiaryPreference>(_context);
         Caregivers = new CaregiverRepository(_context);
         Bookings = new BookingRepository(_context);
         Reviews = new Repository<Review>(_context);
@@ -31,6 +32,7 @@ public class UnitOfWork : IUnitOfWork
     public IUserRepository Users { get; }
     public IRepository<Customer> Customers { get; }
     public IRepository<Beneficiary> Beneficiaries { get; }
+    public IRepository<BeneficiaryPreference> BeneficiaryPreferences { get; }
     public ICaregiverRepository Caregivers { get; }
     public IBookingRepository Bookings { get; }
     public IRepository<Review> Reviews { get; }

@@ -12,6 +12,7 @@ public class ElderCareDbContext : DbContext
     // Identity
     public DbSet<User> Users => Set<User>();
     public DbSet<RefreshToken> RefreshTokens => Set<RefreshToken>();
+    public DbSet<VerificationToken> VerificationTokens => Set<VerificationToken>();
     
     // Customer
     public DbSet<Customer> Customers => Set<Customer>();
@@ -32,6 +33,7 @@ public class ElderCareDbContext : DbContext
     // Dispute
     public DbSet<Dispute> Disputes => Set<Dispute>();
     public DbSet<DisputeEvidence> DisputeEvidences => Set<DisputeEvidence>();
+    public DbSet<DisputeMessage> DisputeMessages => Set<DisputeMessage>();
     
     // Payment
     public DbSet<Wallet> Wallets => Set<Wallet>();
@@ -52,6 +54,11 @@ public class ElderCareDbContext : DbContext
     public DbSet<Conversation> Conversations => Set<Conversation>();
     public DbSet<ConversationParticipant> ConversationParticipants => Set<ConversationParticipant>();
     public DbSet<Message> Messages => Set<Message>();
+    
+    // Fraud Detection (Phase 3)
+    public DbSet<FraudAlert> FraudAlerts => Set<FraudAlert>();
+    public DbSet<FraudScore> FraudScores => Set<FraudScore>();
+    public DbSet<SuspiciousActivity> SuspiciousActivities => Set<SuspiciousActivity>();
 
 
 
@@ -68,6 +75,9 @@ public class ElderCareDbContext : DbContext
         modelBuilder.Entity<Caregiver>().HasQueryFilter(e => !e.IsDeleted);
         modelBuilder.Entity<Beneficiary>().HasQueryFilter(e => !e.IsDeleted);
         modelBuilder.Entity<Booking>().HasQueryFilter(e => !e.IsDeleted);
+        modelBuilder.Entity<Dispute>().HasQueryFilter(e => !e.IsDeleted);
+        modelBuilder.Entity<DisputeMessage>().HasQueryFilter(e => !e.IsDeleted);
+        modelBuilder.Entity<DisputeEvidence>().HasQueryFilter(e => !e.IsDeleted);
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -78,7 +88,10 @@ public class ElderCareDbContext : DbContext
             {
                 case EntityState.Added:
                     entry.Entity.CreatedAt = DateTime.UtcNow;
+                    entry.Entity.UpdatedAt = DateTime.UtcNow;
+                    entry.Entity.IsDeleted = false;
                     break;
+
                 case EntityState.Modified:
                     entry.Entity.UpdatedAt = DateTime.UtcNow;
                     break;

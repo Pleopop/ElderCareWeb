@@ -11,10 +11,10 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.ToTable("Users");
         builder.HasKey(u => u.Id);
         
-        builder.Property(u => u.Email).IsRequired().HasMaxLength(256);
-        builder.Property(u => u.PhoneNumber).HasMaxLength(20);
-        builder.Property(u => u.PasswordHash).IsRequired().HasMaxLength(512);
-        builder.Property(u => u.SecurityPin).HasMaxLength(6);
+        builder.Property(u => u.Email).IsRequired().HasMaxLength(256).IsUnicode(true);
+        builder.Property(u => u.PhoneNumber).HasMaxLength(20).IsUnicode(true);
+        builder.Property(u => u.PasswordHash).IsRequired().HasMaxLength(512).IsUnicode(true);
+        builder.Property(u => u.SecurityPin).HasMaxLength(6).IsUnicode(true);
         
         builder.HasIndex(u => u.Email).IsUnique();
         builder.HasIndex(u => u.PhoneNumber).IsUnique();
@@ -43,10 +43,10 @@ public class CustomerConfiguration : IEntityTypeConfiguration<Customer>
         builder.ToTable("Customers");
         builder.HasKey(c => c.Id);
         
-        builder.Property(c => c.FullName).IsRequired().HasMaxLength(200);
-        builder.Property(c => c.Address).HasMaxLength(500);
-        builder.Property(c => c.EmergencyContactName).HasMaxLength(200);
-        builder.Property(c => c.EmergencyContactPhone).HasMaxLength(20);
+        builder.Property(c => c.FullName).IsRequired().HasMaxLength(200).IsUnicode(true);
+        builder.Property(c => c.Address).HasMaxLength(500).IsUnicode(true);
+        builder.Property(c => c.EmergencyContactName).HasMaxLength(200).IsUnicode(true);
+        builder.Property(c => c.EmergencyContactPhone).HasMaxLength(20).IsUnicode(true);
         
         builder.HasIndex(c => c.UserId).IsUnique();
     }
@@ -59,16 +59,16 @@ public class CaregiverConfiguration : IEntityTypeConfiguration<Caregiver>
         builder.ToTable("Caregivers");
         builder.HasKey(c => c.Id);
         
-        builder.Property(c => c.FullName).IsRequired().HasMaxLength(200);
+        builder.Property(c => c.FullName).IsRequired().HasMaxLength(200).IsUnicode(true);
         builder.Property(c => c.IdentityNumber).HasMaxLength(50);
         builder.Property(c => c.IdentityImageUrl).HasMaxLength(500);
         builder.Property(c => c.IdentityBackImageUrl).HasMaxLength(500);
         builder.Property(c => c.SelfieUrl).HasMaxLength(500);
         builder.Property(c => c.CriminalRecordUrl).HasMaxLength(500);
-        builder.Property(c => c.Bio).HasMaxLength(2000);
-        builder.Property(c => c.PersonalityType).HasMaxLength(50);
+        builder.Property(c => c.Bio).HasMaxLength(2000).IsUnicode(true);
+        builder.Property(c => c.PersonalityType).HasMaxLength(50).IsUnicode(true);
         builder.Property(c => c.HourlyRate).HasPrecision(18, 2);
-        builder.Property(c => c.Address).HasMaxLength(500);
+        builder.Property(c => c.Address).HasMaxLength(500).IsUnicode(true);
         
         builder.HasIndex(c => c.UserId).IsUnique();
         builder.HasIndex(c => c.VerificationStatus);
@@ -82,12 +82,11 @@ public class BeneficiaryConfiguration : IEntityTypeConfiguration<Beneficiary>
         builder.ToTable("Beneficiaries");
         builder.HasKey(b => b.Id);
         
-        builder.Property(b => b.FullName).IsRequired().HasMaxLength(200);
-        builder.Property(b => b.MedicalConditions).HasMaxLength(2000);
-        builder.Property(b => b.Allergies).HasMaxLength(1000);
-        builder.Property(b => b.PersonalityTraits).HasMaxLength(1000);
-        builder.Property(b => b.Hobbies).HasMaxLength(1000);
-        builder.Property(b => b.DailyRoutine).HasMaxLength(2000);
+        builder.Property(b => b.FullName).IsRequired().HasMaxLength(200).IsUnicode(true);
+        builder.Property(b => b.MedicalConditions).HasMaxLength(2000).IsUnicode(true);
+        builder.Property(b => b.Allergies).HasMaxLength(1000).IsUnicode(true);
+        builder.Property(b => b.PersonalityTraits).HasMaxLength(1000).IsUnicode(true);
+        builder.Property(b => b.Hobbies).HasMaxLength(1000).IsUnicode(true);
         
         builder.HasOne(b => b.Customer)
             .WithMany(c => c.Beneficiaries)
@@ -103,14 +102,14 @@ public class BookingConfiguration : IEntityTypeConfiguration<Booking>
         builder.ToTable("Bookings");
         builder.HasKey(b => b.Id);
         
-        builder.Property(b => b.ServiceLocation).IsRequired().HasMaxLength(500);
+        builder.Property(b => b.ServiceLocation).IsRequired().HasMaxLength(500).IsUnicode(true);
         builder.Property(b => b.TotalAmount).HasPrecision(18, 2);
         builder.Property(b => b.EscrowAmount).HasPrecision(18, 2);
         builder.Property(b => b.CommissionAmount).HasPrecision(18, 2);
-        builder.Property(b => b.SpecialRequirements).HasMaxLength(2000);
-        builder.Property(b => b.CancellationReason).HasMaxLength(1000);
+        builder.Property(b => b.SpecialRequirements).HasMaxLength(2000).IsUnicode(true);
+        builder.Property(b => b.CancellationReason).HasMaxLength(1000).IsUnicode(true);
         builder.Property(b => b.CheckInPhotoUrl).HasMaxLength(500);
-        builder.Property(b => b.CheckOutNotes).HasMaxLength(2000);
+        builder.Property(b => b.CheckOutNotes).HasMaxLength(2000).IsUnicode(true);
         
         builder.HasIndex(b => b.Status);
         builder.HasIndex(b => b.ScheduledStartTime);
@@ -240,6 +239,105 @@ public class NotificationConfiguration : IEntityTypeConfiguration<Notification>
     }
 }
 
+public class MatchingResultConfiguration : IEntityTypeConfiguration<MatchingResult>
+{
+    public void Configure(EntityTypeBuilder<MatchingResult> builder)
+    {
+        builder.ToTable("MatchingResults");
+        builder.HasKey(m => m.Id);
+        
+        builder.HasIndex(m => m.BeneficiaryId);
+        builder.HasIndex(m => m.CaregiverId);
+        builder.HasIndex(m => m.OverallScore);
+        builder.HasIndex(m => m.CalculatedAt);
+        
+        // Fix cascade delete conflict - use Restrict for one of the relationships
+        builder.HasOne(m => m.Beneficiary)
+            .WithMany()
+            .HasForeignKey(m => m.BeneficiaryId)
+            .OnDelete(DeleteBehavior.Cascade);
+            
+        builder.HasOne(m => m.Caregiver)
+            .WithMany()
+            .HasForeignKey(m => m.CaregiverId)
+            .OnDelete(DeleteBehavior.Restrict); // Prevent cascade delete conflict
+    }
+}
+
+public class FraudAlertConfiguration : IEntityTypeConfiguration<FraudAlert>
+{
+    public void Configure(EntityTypeBuilder<FraudAlert> builder)
+    {
+        builder.ToTable("FraudAlerts");
+        builder.HasKey(f => f.Id);
+        
+        builder.Property(f => f.AlertType).IsRequired().HasMaxLength(50);
+        builder.Property(f => f.Description).IsRequired().HasMaxLength(1000);
+        builder.Property(f => f.Status).IsRequired().HasMaxLength(20);
+        builder.Property(f => f.InvestigatedBy).HasMaxLength(100);
+        builder.Property(f => f.Resolution).HasMaxLength(1000);
+        
+        builder.HasIndex(f => f.UserId);
+        builder.HasIndex(f => f.AlertType);
+        builder.HasIndex(f => f.Severity);
+        builder.HasIndex(f => f.Status);
+        builder.HasIndex(f => f.DetectedAt);
+        
+        builder.HasOne(f => f.User)
+            .WithMany()
+            .HasForeignKey(f => f.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
+public class FraudScoreConfiguration : IEntityTypeConfiguration<FraudScore>
+{
+    public void Configure(EntityTypeBuilder<FraudScore> builder)
+    {
+        builder.ToTable("FraudScores");
+        builder.HasKey(f => f.Id);
+        
+        builder.Property(f => f.OverallScore).HasPrecision(5, 2);
+        builder.Property(f => f.GPSScore).HasPrecision(5, 2);
+        builder.Property(f => f.BookingScore).HasPrecision(5, 2);
+        builder.Property(f => f.PaymentScore).HasPrecision(5, 2);
+        builder.Property(f => f.IdentityScore).HasPrecision(5, 2);
+        
+        builder.HasIndex(f => f.UserId);
+        builder.HasIndex(f => f.OverallScore);
+        builder.HasIndex(f => f.CalculatedAt);
+        
+        builder.HasOne(f => f.User)
+            .WithMany()
+            .HasForeignKey(f => f.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
+public class SuspiciousActivityConfiguration : IEntityTypeConfiguration<SuspiciousActivity>
+{
+    public void Configure(EntityTypeBuilder<SuspiciousActivity> builder)
+    {
+        builder.ToTable("SuspiciousActivities");
+        builder.HasKey(s => s.Id);
+        
+        builder.Property(s => s.ActivityType).IsRequired().HasMaxLength(50);
+        builder.Property(s => s.Details).IsRequired();
+        builder.Property(s => s.RiskScore).HasPrecision(5, 2);
+        
+        builder.HasIndex(s => s.UserId);
+        builder.HasIndex(s => s.ActivityType);
+        builder.HasIndex(s => s.DetectedAt);
+        builder.HasIndex(s => s.RiskScore);
+        
+        builder.HasOne(s => s.User)
+            .WithMany()
+            .HasForeignKey(s => s.UserId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
+}
+
+// Phase 3: Dispute Resolution System Configurations
 public class DisputeConfiguration : IEntityTypeConfiguration<Dispute>
 {
     public void Configure(EntityTypeBuilder<Dispute> builder)
@@ -247,12 +345,97 @@ public class DisputeConfiguration : IEntityTypeConfiguration<Dispute>
         builder.ToTable("Disputes");
         builder.HasKey(d => d.Id);
         
-        builder.Property(d => d.Reason).IsRequired().HasMaxLength(200);
-        builder.Property(d => d.Description).IsRequired().HasMaxLength(2000);
-        builder.Property(d => d.Resolution).HasMaxLength(2000);
-        builder.Property(d => d.ResolvedBy).HasMaxLength(200);
+        builder.Property(d => d.Subject).IsRequired().HasMaxLength(200).IsUnicode(true);
+        builder.Property(d => d.Description).IsRequired().HasMaxLength(2000).IsUnicode(true);
+        builder.Property(d => d.RequestedAmount).HasColumnType("decimal(18,2)");
+        builder.Property(d => d.ApprovedAmount).HasColumnType("decimal(18,2)");
+        builder.Property(d => d.Resolution).HasMaxLength(2000).IsUnicode(true);
+        builder.Property(d => d.ResolutionNotes).HasMaxLength(2000).IsUnicode(true);
         
+        // Indexes
+        builder.HasIndex(d => d.BookingId);
+        builder.HasIndex(d => d.InitiatedBy);
+        builder.HasIndex(d => d.RespondentId);
         builder.HasIndex(d => d.Status);
-        builder.HasIndex(d => d.BookingId).IsUnique();
+        builder.HasIndex(d => d.Priority);
+        builder.HasIndex(d => d.FiledAt);
+        
+        // Relationships
+        builder.HasOne(d => d.Booking)
+            .WithOne(b => b.Dispute)
+            .HasForeignKey<Dispute>(d => d.BookingId)
+            .OnDelete(DeleteBehavior.Restrict);
+            
+        builder.HasOne(d => d.Initiator)
+            .WithMany()
+            .HasForeignKey(d => d.InitiatedBy)
+            .OnDelete(DeleteBehavior.Restrict);
+            
+        builder.HasOne(d => d.Respondent)
+            .WithMany()
+            .HasForeignKey(d => d.RespondentId)
+            .OnDelete(DeleteBehavior.Restrict);
+            
+        builder.HasOne(d => d.Reviewer)
+            .WithMany()
+            .HasForeignKey(d => d.ReviewedBy)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
+}
+
+public class DisputeEvidenceConfiguration : IEntityTypeConfiguration<DisputeEvidence>
+{
+    public void Configure(EntityTypeBuilder<DisputeEvidence> builder)
+    {
+        builder.ToTable("DisputeEvidence");
+        builder.HasKey(e => e.Id);
+        
+        builder.Property(e => e.FileName).IsRequired().HasMaxLength(255).IsUnicode(true);
+        builder.Property(e => e.FilePath).IsRequired().HasMaxLength(500).IsUnicode(true);
+        builder.Property(e => e.MimeType).IsRequired().HasMaxLength(100);
+        builder.Property(e => e.Description).HasMaxLength(500).IsUnicode(true);
+        
+        // Indexes
+        builder.HasIndex(e => e.DisputeId);
+        builder.HasIndex(e => e.UploadedBy);
+        builder.HasIndex(e => e.UploadedAt);
+        
+        // Relationships
+        builder.HasOne(e => e.Dispute)
+            .WithMany(d => d.Evidence)
+            .HasForeignKey(e => e.DisputeId)
+            .OnDelete(DeleteBehavior.Cascade);
+            
+        builder.HasOne(e => e.Uploader)
+            .WithMany()
+            .HasForeignKey(e => e.UploadedBy)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
+}
+
+public class DisputeMessageConfiguration : IEntityTypeConfiguration<DisputeMessage>
+{
+    public void Configure(EntityTypeBuilder<DisputeMessage> builder)
+    {
+        builder.ToTable("DisputeMessages");
+        builder.HasKey(m => m.Id);
+        
+        builder.Property(m => m.MessageText).IsRequired().HasMaxLength(2000).IsUnicode(true);
+        
+        // Indexes
+        builder.HasIndex(m => m.DisputeId);
+        builder.HasIndex(m => m.SenderId);
+        builder.HasIndex(m => m.SentAt);
+        
+        // Relationships
+        builder.HasOne(m => m.Dispute)
+            .WithMany(d => d.Messages)
+            .HasForeignKey(m => m.DisputeId)
+            .OnDelete(DeleteBehavior.Cascade);
+            
+        builder.HasOne(m => m.Sender)
+            .WithMany()
+            .HasForeignKey(m => m.SenderId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
