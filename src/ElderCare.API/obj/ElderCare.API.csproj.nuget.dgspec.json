@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj": {}
+    "E:\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj": {
+    "E:\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj",
+        "projectUniqueName": "E:\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj",
         "projectName": "ElderCare.API",
-        "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj",
+        "projectPath": "E:\\ElderCare\\src\\ElderCare.API\\ElderCare.API.csproj",
         "packagesPath": "C:\\Users\\firel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.API\\obj\\",
+        "outputPath": "E:\\ElderCare\\src\\ElderCare.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,14 +32,14 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj"
               },
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj"
               },
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj"
               }
             }
           }
@@ -106,14 +106,14 @@
         }
       }
     },
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
+    "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
+        "projectUniqueName": "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
         "projectName": "ElderCare.Application",
-        "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
+        "projectPath": "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
         "packagesPath": "C:\\Users\\firel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\obj\\",
+        "outputPath": "E:\\ElderCare\\src\\ElderCare.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -134,8 +134,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj"
               }
             }
           }
@@ -225,14 +225,14 @@
         }
       }
     },
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
+    "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj",
+        "projectUniqueName": "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj",
         "projectName": "ElderCare.Domain",
-        "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj",
+        "projectPath": "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj",
         "packagesPath": "C:\\Users\\firel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\obj\\",
+        "outputPath": "E:\\ElderCare\\src\\ElderCare.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -290,14 +290,14 @@
         }
       }
     },
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj": {
+    "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
+        "projectUniqueName": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
         "projectName": "ElderCare.Infrastructure",
-        "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
+        "projectPath": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\firel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\obj\\",
+        "outputPath": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -318,11 +318,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj"
               },
-              "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
-                "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj"
+              "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj": {
+                "projectPath": "E:\\ElderCare\\src\\ElderCare.Domain\\ElderCare.Domain.csproj"
               }
             }
           }
@@ -398,14 +398,14 @@
         }
       }
     },
-    "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj": {
+    "E:\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj",
+        "projectUniqueName": "E:\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj",
         "projectName": "ElderCare.Shared",
-        "projectPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj",
+        "projectPath": "E:\\ElderCare\\src\\ElderCare.Shared\\ElderCare.Shared.csproj",
         "packagesPath": "C:\\Users\\firel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Shared\\obj\\",
+        "outputPath": "E:\\ElderCare\\src\\ElderCare.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

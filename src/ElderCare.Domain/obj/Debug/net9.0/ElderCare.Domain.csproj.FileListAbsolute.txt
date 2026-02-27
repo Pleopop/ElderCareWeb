@@ -10,3 +10,15 @@ C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\De
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\refint\ElderCare.Domain.dll
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.pdb
 C:\Users\firel\.gemini\antigravity\scratch\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ref\ElderCare.Domain.dll
+E:\ElderCare\src\ElderCare.Domain\bin\Debug\net9.0\ElderCare.Domain.deps.json
+E:\ElderCare\src\ElderCare.Domain\bin\Debug\net9.0\ElderCare.Domain.dll
+E:\ElderCare\src\ElderCare.Domain\bin\Debug\net9.0\ElderCare.Domain.pdb
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.AssemblyInfoInputs.cache
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.AssemblyInfo.cs
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.csproj.CoreCompileInputs.cache
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.sourcelink.json
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.dll
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\refint\ElderCare.Domain.dll
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ElderCare.Domain.pdb
+E:\ElderCare\src\ElderCare.Domain\obj\Debug\net9.0\ref\ElderCare.Domain.dll

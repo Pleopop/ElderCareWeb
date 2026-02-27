@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6oT3esHXkf0=",
+  "dgSpecHash": "+aCmjfAr7XA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
+  "projectFilePath": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\firel\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\firel\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

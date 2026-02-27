@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jHC1A9nCdSo=",
+  "dgSpecHash": "951cCk6rQ+4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\firel\\.gemini\\antigravity\\scratch\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
+  "projectFilePath": "E:\\ElderCare\\src\\ElderCare.Application\\ElderCare.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\firel\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\firel\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",

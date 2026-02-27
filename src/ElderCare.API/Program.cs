@@ -111,6 +111,14 @@ builder.Services.AddHttpClient<IChatbotService, ChatbotService>();
 
 var app = builder.Build();
 
+// Seed sample data (only when DB is empty)
+using (var scope = app.Services.CreateScope())
+{
+    var context = scope.ServiceProvider.GetRequiredService<ElderCare.Infrastructure.Persistence.ElderCareDbContext>();
+    var passwordHasher = scope.ServiceProvider.GetRequiredService<ElderCare.Application.Common.Interfaces.IPasswordHasher>();
+    await ElderCare.Infrastructure.Persistence.SeedData.SeedAsync(context, passwordHasher);
+}
+
 // Configure middleware pipeline
 if (app.Environment.IsDevelopment())
 {
