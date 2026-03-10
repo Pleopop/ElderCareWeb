@@ -5,6 +5,7 @@ using ElderCare.Domain.Entities;
 using ElderCare.Domain.Enums;
 using ElderCare.Domain.Interfaces;
 using FluentValidation;
+using System.Linq;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,8 +18,15 @@ public class CreateBookingCommandValidator : AbstractValidator<CreateBookingComm
 {
     public CreateBookingCommandValidator()
     {
-        RuleFor(x => x.Request.BeneficiaryId).NotEmpty();
-        RuleFor(x => x.Request.CaregiverId).NotEmpty();
+        RuleFor(x => x.Request).Custom((req, ctx) =>
+        {
+            if (req.BeneficiaryId == Guid.Empty && string.IsNullOrWhiteSpace(req.BeneficiaryName))
+                ctx.AddFailure("Beneficiary", "Either BeneficiaryId or BeneficiaryName is required");
+
+            if (req.CaregiverId == Guid.Empty && string.IsNullOrWhiteSpace(req.CaregiverName))
+                ctx.AddFailure("Caregiver", "Either CaregiverId or CaregiverName is required");
+        });
+
         RuleFor(x => x.Request.ScheduledStartTime).GreaterThan(DateTime.UtcNow);
         RuleFor(x => x.Request.ScheduledEndTime).GreaterThan(x => x.Request.ScheduledStartTime);
         RuleFor(x => x.Request.ServiceLocation).NotEmpty().MaximumLength(500);
@@ -48,13 +56,55 @@ public class CreateBookingCommandHandler : IRequestHandler<CreateBookingCommand,
         if (Customer == null)
             return Result<BookingDto>.Failure("Not found", "Customer profile not found");
 
-        // Verify beneficiary belongs to customer
-        var beneficiary = await _unitOfWork.Beneficiaries.GetByIdAsync(request.Request.BeneficiaryId, cancellationToken);
+        // Resolve beneficiary by id or name
+        Guid beneficiaryId = request.Request.BeneficiaryId;
+        Beneficiary beneficiary = null;
+        if (beneficiaryId == Guid.Empty && !string.IsNullOrWhiteSpace(request.Request.BeneficiaryName))
+        {
+            var matches = await _unitOfWork.Beneficiaries.Query()
+                .Where(b => b.CustomerId == Customer.Id && b.FullName == request.Request.BeneficiaryName)
+                .ToListAsync(cancellationToken);
+
+            if (!matches.Any())
+                return Result<BookingDto>.Failure("Invalid", "Beneficiary not found");
+
+            if (matches.Count > 1)
+                return Result<BookingDto>.Failure("Ambiguous", "Multiple beneficiaries found with that name. Please specify ID.");
+
+            beneficiary = matches.First();
+            beneficiaryId = beneficiary.Id;
+        }
+        else
+        {
+            beneficiary = await _unitOfWork.Beneficiaries.GetByIdAsync(beneficiaryId, cancellationToken);
+        }
+
         if (beneficiary == null || beneficiary.CustomerId != Customer.Id)
             return Result<BookingDto>.Failure("Invalid", "Beneficiary not found or does not belong to you");
 
-        // Verify caregiver exists and is approved
-        var caregiver = await _unitOfWork.Caregivers.GetByIdAsync(request.Request.CaregiverId, cancellationToken);
+        // Resolve caregiver by id or name
+        Guid caregiverId = request.Request.CaregiverId;
+        Caregiver caregiver = null;
+        if (caregiverId == Guid.Empty && !string.IsNullOrWhiteSpace(request.Request.CaregiverName))
+        {
+            var careMatches = await _unitOfWork.Caregivers.Query()
+                .Where(cg => cg.FullName == request.Request.CaregiverName && cg.VerificationStatus == VerificationStatus.Approved)
+                .ToListAsync(cancellationToken);
+
+            if (!careMatches.Any())
+                return Result<BookingDto>.Failure("Invalid", "Caregiver not found");
+
+            if (careMatches.Count > 1)
+                return Result<BookingDto>.Failure("Ambiguous", "Multiple caregivers found with that name. Please specify ID.");
+
+            caregiver = careMatches.First();
+            caregiverId = caregiver.Id;
+        }
+        else
+        {
+            caregiver = await _unitOfWork.Caregivers.GetByIdAsync(caregiverId, cancellationToken);
+        }
+
         if (caregiver == null || caregiver.VerificationStatus != VerificationStatus.Approved)
             return Result<BookingDto>.Failure("Invalid", "Caregiver not available");
 

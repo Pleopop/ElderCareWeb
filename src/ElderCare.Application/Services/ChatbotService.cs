@@ -25,7 +25,7 @@ public class ChatbotService : IChatbotService
         _unitOfWork = unitOfWork;
         _logger = logger;
         _apiKey = configuration["Gemini:ApiKey"] ?? "";
-        _model = configuration["Gemini:Model"] ?? "gemini-2.0-flash";
+        _model = configuration["Gemini:Model"] ?? "gemini-2.5-flash";
     }
 
     public async Task<ChatbotResponse> AskAsync(Guid userId, ChatbotRequest request, CancellationToken ct = default)
@@ -138,7 +138,7 @@ Quy tắc:
                 .GetProperty("parts")[0]
                 .GetProperty("text")
                 .GetString() ?? "";
-
+            reply = reply.Replace("**", "");
             return new ChatbotResponse { Reply = reply };
         }
         catch (Exception ex)

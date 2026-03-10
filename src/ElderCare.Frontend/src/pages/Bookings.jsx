@@ -98,14 +98,48 @@ export default function Bookings() {
 }
 
 function CreateBookingModal({ onClose, onCreated }) {
-    const [form, setForm] = useState({ beneficiaryId: '', caregiverId: '', scheduledDate: '', durationHours: 4, notes: '' });
+    const [form, setForm] = useState({ beneficiaryId: '', caregiverId: '', scheduledDate: '', durationHours: 4, serviceLocation: '', notes: '' });
+    const [beneficiaries, setBeneficiaries] = useState([]);
+    const [caregivers, setCaregivers] = useState([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
+
+    useEffect(() => { loadBeneficiaries(); }, []);
+
+    const loadBeneficiaries = async () => {
+        const res = await api.get('/customers/beneficiaries');
+        if (res.isSuccess) setBeneficiaries(res.data || []);
+    };
+
+    const loadCaregiversForBeneficiary = async (beneficiaryId) => {
+        if (!beneficiaryId) { setCaregivers([]); return; }
+        const res = await api.get(`/matching/top-matches/${beneficiaryId}?topN=20`);
+        if (res.isSuccess) setCaregivers(res.data || []);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        const res = await api.post('/bookings', form);
+        // Build payload matching backend DTO (ScheduledStartTime/ScheduledEndTime)
+        const start = new Date(form.scheduledDate);
+        const end = new Date(start.getTime() + (form.durationHours || 0) * 60 * 60 * 1000);
+        const beneficiaryName = beneficiaries.find(b => (b.id || b.beneficiaryId) === form.beneficiaryId)?.fullName || beneficiaries.find(b => (b.id || b.beneficiaryId) === form.beneficiaryId)?.name || '';
+        const caregiverName = caregivers.find(c => (c.caregiverId || c.id) === form.caregiverId)?.caregiverName || caregivers.find(c => (c.caregiverId || c.id) === form.caregiverId)?.fullName || caregivers.find(c => (c.caregiverId || c.id) === form.caregiverId)?.name || '';
+
+        const payload = {
+            beneficiaryId: form.beneficiaryId,
+            beneficiaryName: beneficiaryName,
+            caregiverId: form.caregiverId,
+            caregiverName: caregiverName,
+            scheduledStartTime: start.toISOString(),
+            scheduledEndTime: end.toISOString(),
+            serviceLocation: form.serviceLocation || '',
+            latitude: 0,
+            longitude: 0,
+            specialRequirements: form.notes,
+        };
+
+        const res = await api.post('/bookings', payload);
         if (res.isSuccess) { onCreated(); onClose(); }
         else setError(res.message || 'Không thể tạo booking');
         setLoading(false);
@@ -121,12 +155,32 @@ function CreateBookingModal({ onClose, onCreated }) {
                 {error && <div className="auth-error">{error}</div>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label className="form-label">ID người được chăm sóc</label>
-                        <input className="form-input" value={form.beneficiaryId} onChange={(e) => setForm({ ...form, beneficiaryId: e.target.value })} required placeholder="GUID" />
+                        <label className="form-label">Người được chăm sóc</label>
+                        <select className="form-input" value={form.beneficiaryId} onChange={(e) => {
+                            const val = e.target.value;
+                            const selected = beneficiaries.find(b => (b.id || b.beneficiaryId) === val);
+                            const location = selected?.address || selected?.Address || selected?.fullName ? (selected?.address || selected?.Address || 'Tại nhà') : 'Tại nhà';
+                            setForm({ ...form, beneficiaryId: val, serviceLocation: location });
+                            loadCaregiversForBeneficiary(val);
+                        }} required>
+                            <option value="">-- Chọn người được chăm sóc --</option>
+                            {beneficiaries.map(b => (
+                                <option key={b.id} value={b.id}>{b.fullName || b.name || b.displayName}</option>
+                            ))}
+                        </select>
                     </div>
                     <div className="form-group">
-                        <label className="form-label">ID người chăm sóc</label>
-                        <input className="form-input" value={form.caregiverId} onChange={(e) => setForm({ ...form, caregiverId: e.target.value })} required placeholder="GUID" />
+                        <label className="form-label">Địa điểm dịch vụ</label>
+                        <input className="form-input" value={form.serviceLocation || ''} onChange={(e) => setForm({ ...form, serviceLocation: e.target.value })} required />
+                    </div>
+                    <div className="form-group">
+                        <label className="form-label">Chọn người chăm sóc</label>
+                        <select className="form-input" value={form.caregiverId} onChange={(e) => setForm({ ...form, caregiverId: e.target.value })} required>
+                            <option value="">-- Chọn người chăm sóc --</option>
+                            {caregivers.map(c => (
+                                <option key={c.caregiverId || c.id} value={c.caregiverId || c.id}>{c.caregiverName || c.fullName || c.name}</option>
+                            ))}
+                        </select>
                     </div>
                     <div className="form-group">
                         <label className="form-label">Ngày giờ</label>

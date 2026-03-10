@@ -2898,9 +2898,17 @@
             "type": "string",
             "format": "uuid"
           },
+          "beneficiaryName": {
+            "type": "string",
+            "nullable": true
+          },
           "caregiverId": {
             "type": "string",
             "format": "uuid"
+          },
+          "caregiverName": {
+            "type": "string",
+            "nullable": true
           },
           "scheduledStartTime": {
             "type": "string",

@@ -6,7 +6,9 @@ namespace ElderCare.Application.Features.Bookings.DTOs;
 public class CreateBookingRequest
 {
     public Guid BeneficiaryId { get; set; }
+    public string? BeneficiaryName { get; set; }
     public Guid CaregiverId { get; set; }
+    public string? CaregiverName { get; set; }
     public DateTime ScheduledStartTime { get; set; }
     public DateTime ScheduledEndTime { get; set; }
     public string ServiceLocation { get; set; } = string.Empty;

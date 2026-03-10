@@ -419,7 +419,6 @@ E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\7gkdtcgvcb-c4kzy27099
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\8bkumy5pmz-dicx7c3wcn.gz
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\0zoad9aq4h-emo6izh7kq.gz
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\0g7x8a0heq-g6otmcx34d.gz
-E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\zf9mlqwl3f-zldtmfg438.gz
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\staticwebassets.build.json
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\staticwebassets.build.json.cache
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\staticwebassets.development.json
@@ -431,3 +430,6 @@ E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ElderCare.API.pdb
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ElderCare.API.genruntimeconfig.cache
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ref\ElderCare.API.dll
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\0nms7y7wvc-umy97qoqpu.gz
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\lzbxvyu2e7-9fnqzhqrie.gz
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\zf9mlqwl3f-plfuqg189m.gz
