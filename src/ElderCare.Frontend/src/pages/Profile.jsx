@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../api/client';
 import './Pages.css';
+import CustomerProfile from './profiles/CustomerProfile';
+import CaregiverProfile from './profiles/CaregiverProfile';
 
 export default function Profile() {
     const { user } = useAuth();
@@ -21,6 +23,19 @@ export default function Profile() {
 
     if (loading) return <div className="loading-spinner" />;
 
+    // Route to appropriate profile component based on role
+    // 0 = Customer, 1 = Caregiver, 2 = Admin
+    if (profile?.role === 0) {
+        return <CustomerProfile user={profile} onRefresh={loadProfile} />;
+    } else if (profile?.role === 1) {
+        return <CaregiverProfile user={profile} onRefresh={loadProfile} />;
+    } else {
+        // Admin or unknown role - show generic profile
+        return <GenericProfile profile={profile} />;
+    }
+}
+
+function GenericProfile({ profile }) {
     const roleLabel = { 0: 'Khách hàng', 1: 'Người chăm sóc', 2: 'Quản trị viên' };
     const statusLabel = { 0: 'Đang chờ', 1: 'Hoạt động', 2: 'Bị khóa', 3: 'Đã xóa' };
 

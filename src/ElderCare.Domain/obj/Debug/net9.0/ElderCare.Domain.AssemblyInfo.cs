@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElderCare.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1c8d7fc8a6907357e2c850e19fa3ef13a5e1889")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b516d6301d5ec935b94fdc01ca173f9b73f0768")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElderCare.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElderCare.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
