@@ -24,13 +24,13 @@ public class ChatbotService : IChatbotService
         _httpClient = httpClient;
         _unitOfWork = unitOfWork;
         _logger = logger;
+        // Lấy từ User Secrets (Local) hoặc Environment Variables (Azure)
         _apiKey = configuration["Gemini:ApiKey"] ?? "";
         _model = configuration["Gemini:Model"] ?? "gemini-2.5-flash";
     }
 
     public async Task<ChatbotResponse> AskAsync(Guid userId, ChatbotRequest request, CancellationToken ct = default)
     {
-        // Build beneficiary context if provided
         string beneficiaryContext = "";
         if (request.BeneficiaryId.HasValue)
         {
@@ -39,41 +39,27 @@ public class ChatbotService : IChatbotService
             {
                 var age = DateTime.Today.Year - beneficiary.DateOfBirth.Year;
                 beneficiaryContext = $@"
-
 THÔNG TIN NGƯỜI THỤ HƯỞNG:
 - Họ tên: {beneficiary.FullName}
 - Tuổi: {age}
 - Giới tính: {beneficiary.Gender}
-- Địa chỉ: {beneficiary.Address ?? "Chưa cung cấp"}
 - Tình trạng sức khỏe: {beneficiary.MedicalConditions ?? "Không có"}
-- Thuốc đang dùng: {beneficiary.Medications ?? "Không có"}
-- Dị ứng: {beneficiary.Allergies ?? "Không có"}
 - Khả năng vận động: {beneficiary.MobilityLevel}
-- Tình trạng nhận thức: {beneficiary.CognitiveStatus}
-- Nhu cầu đặc biệt: {beneficiary.SpecialNeeds ?? "Không có"}
-- Tính cách: {beneficiary.PersonalityTraits ?? "Chưa cung cấp"}
-- Sở thích: {beneficiary.Hobbies ?? "Chưa cung cấp"}";
+- Nhu cầu đặc biệt: {beneficiary.SpecialNeeds ?? "Không có"}";
             }
         }
 
-        var systemPrompt = $@"Bạn là trợ lý AI của nền tảng Tuổi Vàng — dịch vụ chăm sóc người cao tuổi tại Việt Nam.
-Vai trò của bạn:
-1. Tư vấn dịch vụ chăm sóc phù hợp cho người thụ hưởng
-2. Đề xuất loại caregiver phù hợp dựa trên tình trạng sức khỏe
-3. Giải đáp thắc mắc về quy trình đặt dịch vụ, thanh toán, đánh giá
-4. Hỗ trợ thông tin về chăm sóc sức khỏe người cao tuổi
+        var systemPrompt = $@"Bạn là trợ lý AI của nền tảng Tuổi Vàng...
 
-Quy tắc:
-- Trả lời bằng tiếng Việt, thân thiện và dễ hiểu
-- Dựa trên thông tin người thụ hưởng nếu có để tư vấn cá nhân hóa
-- Không tư vấn y khoa chuyên sâu, khuyên người dùng gặp bác sĩ khi cần
-- Giữ câu trả lời ngắn gọn, rõ ràng (tối đa 300 từ)
+QUY TẮC TRÌNH BÀY:
+- TUYỆT ĐỐI KHÔNG sử dụng các ký tự Markdown như dấu sao (*), dấu thăng (#) hoặc gạch đầu dòng.
+- Để phân tách các ý, hãy sử dụng số thứ tự (1., 2., 3.) hoặc xuống dòng hai lần.
+- Không in đậm, không in nghiêng.
+- Trả lời dưới dạng văn bản thuần túy (Plain Text).
 {beneficiaryContext}";
 
-        // Build Gemini API contents array
         var contents = new List<object>();
 
-        // Add conversation history
         if (request.History != null)
         {
             foreach (var msg in request.History.TakeLast(10))
@@ -86,68 +72,55 @@ Quy tắc:
             }
         }
 
-        // Add current user message
-        contents.Add(new
-        {
-            role = "user",
-            parts = new[] { new { text = request.Message } }
-        });
+        contents.Add(new { role = "user", parts = new[] { new { text = request.Message } } });
 
         try
         {
             var requestBody = new
             {
-                system_instruction = new
-                {
-                    parts = new[] { new { text = systemPrompt } }
-                },
+                system_instruction = new { parts = new[] { new { text = systemPrompt } } },
                 contents,
                 generationConfig = new
                 {
-                    maxOutputTokens = 800,
-                    temperature = 0.7
+                    maxOutputTokens = 1500, // Tăng lên để tránh bị ngắt quãng
+                    temperature = 0.7,
+                    topP = 0.95 // Thêm cái này để câu trả lời mượt hơn
                 }
             };
 
             var json = JsonSerializer.Serialize(requestBody);
-            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            // Gemini API endpoint: key is passed as query parameter
-            var url = $"https://generativelanguage.googleapis.com/v1beta/models/{_model}:generateContent?key={_apiKey}";
+            // --- PHẦN REFACTOR BẢO MẬT ---
+            // 1. URL sạch, không chứa API Key
+            var url = $"https://generativelanguage.googleapis.com/v1beta/models/{_model}:generateContent";
 
-            var response = await _httpClient.PostAsync(url, httpContent, ct);
+            using var httpRequest = new HttpRequestMessage(HttpMethod.Post, url);
+            httpRequest.Content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            // 2. Truyền API Key qua Header thay vì Query Parameter
+            httpRequest.Headers.Add("x-goog-api-key", _apiKey);
+
+            var response = await _httpClient.SendAsync(httpRequest, ct);
 
             if (!response.IsSuccessStatusCode)
             {
                 var errorBody = await response.Content.ReadAsStringAsync(ct);
+                // 3. Log lỗi nhưng không làm lộ URL (phòng trường hợp cấu hình log tự động ghi URL)
                 _logger.LogError("Gemini API error: {StatusCode} - {Body}", response.StatusCode, errorBody);
 
-                return new ChatbotResponse
-                {
-                    Reply = "Xin lỗi, tôi đang gặp sự cố kỹ thuật. Vui lòng thử lại sau hoặc liên hệ hỗ trợ."
-                };
+                return new ChatbotResponse { Reply = "Xin lỗi, tôi đang bận một chút. Thử lại sau nhé!" };
             }
 
             var responseJson = await response.Content.ReadAsStringAsync(ct);
             using var doc = JsonDocument.Parse(responseJson);
+            var reply = doc.RootElement.GetProperty("candidates")[0].GetProperty("content").GetProperty("parts")[0].GetProperty("text").GetString() ?? "";
 
-            // Gemini response: candidates[0].content.parts[0].text
-            var reply = doc.RootElement
-                .GetProperty("candidates")[0]
-                .GetProperty("content")
-                .GetProperty("parts")[0]
-                .GetProperty("text")
-                .GetString() ?? "";
-            reply = reply.Replace("**", "");
             return new ChatbotResponse { Reply = reply };
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "ChatbotService error");
-            return new ChatbotResponse
-            {
-                Reply = "Xin lỗi, tôi đang gặp sự cố. Vui lòng thử lại sau."
-            };
+            _logger.LogError(ex, "ChatbotService Exception");
+            return new ChatbotResponse { Reply = "Có lỗi xảy ra, nhóm phát triển đang kiểm tra." };
         }
     }
 }

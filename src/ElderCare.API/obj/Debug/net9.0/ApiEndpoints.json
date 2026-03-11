@@ -980,6 +980,62 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverProfilesController",
+    "Method": "GetCaregiverProfile",
+    "RelativePath": "api/v1/CaregiverProfiles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverProfilesController",
+    "Method": "GetMyProfile",
+    "RelativePath": "api/v1/CaregiverProfiles/me",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverProfilesController",
+    "Method": "GetMyAvailability",
+    "RelativePath": "api/v1/CaregiverProfiles/me/availability",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverProfilesController",
+    "Method": "GetMyPersonality",
+    "RelativePath": "api/v1/CaregiverProfiles/me/personality",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ElderCare.API.Controllers.CaregiverProfilesController",
+    "Method": "GetMySkills",
+    "RelativePath": "api/v1/CaregiverProfiles/me/skills",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ElderCare.API.Controllers.ChatbotController",
     "Method": "Ask",
     "RelativePath": "api/v1/Chatbot/ask",

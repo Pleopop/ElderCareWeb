@@ -901,6 +901,77 @@
         }
       }
     },
+    "/api/v1/CaregiverProfiles/me": {
+      "get": {
+        "tags": [
+          "CaregiverProfiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/CaregiverProfiles/me/skills": {
+      "get": {
+        "tags": [
+          "CaregiverProfiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/CaregiverProfiles/me/availability": {
+      "get": {
+        "tags": [
+          "CaregiverProfiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/CaregiverProfiles/me/personality": {
+      "get": {
+        "tags": [
+          "CaregiverProfiles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v1/CaregiverProfiles/{id}": {
+      "get": {
+        "tags": [
+          "CaregiverProfiles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/chat/conversations": {
       "get": {
         "tags": [

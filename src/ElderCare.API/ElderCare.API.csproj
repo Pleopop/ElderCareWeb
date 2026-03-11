@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <SpaRoot>..\ElderCare.Frontend\</SpaRoot>
+    <UserSecretsId>8e89157f-71e1-4fcd-b7af-5e5b8a026cbb</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

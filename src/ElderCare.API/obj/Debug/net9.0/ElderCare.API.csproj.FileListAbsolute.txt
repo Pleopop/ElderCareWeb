@@ -432,4 +432,6 @@ E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\ref\ElderCare.API.dll
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\0nms7y7wvc-umy97qoqpu.gz
 E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\lzbxvyu2e7-9fnqzhqrie.gz
-E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\zf9mlqwl3f-plfuqg189m.gz
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\4jcznlbqmg-mb672ym09j.gz
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\w4o7nfk8ma-74nywetx86.gz
+E:\ElderCare\src\ElderCare.API\obj\Debug\net9.0\compressed\zf9mlqwl3f-cexzx3imem.gz

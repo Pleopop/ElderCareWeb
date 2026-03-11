@@ -1,10 +1,11 @@
-using ElderCare.Application.Features.Profiles.Queries;
+using ElderCare.Application.Common.Interfaces;
 using ElderCare.Application.Features.Profiles.DTOs;
+using ElderCare.Application.Features.Profiles.Queries;
+using ElderCare.Domain.Enums;
+using ElderCare.Domain.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ElderCare.Domain.Interfaces;
-using ElderCare.Application.Common.Interfaces;
 
 namespace ElderCare.API.Controllers;
 
@@ -209,7 +210,7 @@ public class CaregiverProfileDto
     public double? Latitude { get; set; }
     public double? Longitude { get; set; }
     public int? ServiceRadiusKm { get; set; }
-    public int VerificationStatus { get; set; }
+    public VerificationStatus VerificationStatus { get; set; }
     public string? RejectionReason { get; set; }
     public DateTime? ApprovedAt { get; set; }
     public string? IdentityNumber { get; set; }
