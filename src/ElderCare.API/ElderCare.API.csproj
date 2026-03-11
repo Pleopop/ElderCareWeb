@@ -26,16 +26,6 @@
     <ProjectReference Include="..\ElderCare.Shared\ElderCare.Shared.csproj" />
   </ItemGroup>
 
-  <!-- Auto-build Frontend and copy to wwwroot -->
-  <Target Name="BuildFrontend" BeforeTargets="Build" Condition="Exists('$(SpaRoot)package.json')">
-    <Message Importance="high" Text="Building ElderCare Frontend..." />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install --silent" />
-    <Exec WorkingDirectory="$(SpaRoot)" Command="npx vite build" />
-    <ItemGroup>
-      <FrontendFiles Include="$(SpaRoot)dist\**\*" />
-    </ItemGroup>
-    <Copy SourceFiles="@(FrontendFiles)" DestinationFolder="wwwroot\%(RecursiveDir)" />
-    <Message Importance="high" Text="Frontend build copied to wwwroot/" />
-  </Target>
+  
 
 </Project>

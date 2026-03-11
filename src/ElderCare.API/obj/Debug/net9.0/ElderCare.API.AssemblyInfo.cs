@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+efec6e4f51cb4e1a068628857687026ac9d056ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+787d262e16302e6dd711c9f61e6df6994d6b1079")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElderCare.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
