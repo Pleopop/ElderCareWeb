@@ -1,6 +1,5 @@
 // API Client with JWT authentication
-const BASE_URL = '/api/v1';
-
+const BASE_URL = 'https://eldercareweb.onrender.com/api';
 class ApiClient {
     constructor() {
         this.baseUrl = BASE_URL;
