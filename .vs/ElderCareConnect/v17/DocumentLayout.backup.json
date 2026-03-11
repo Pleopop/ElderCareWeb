@@ -19,10 +19,6 @@
       "RelativeMoniker": "D:0:0:{2729D05D-586B-4971-9F5D-6356AB41F2C9}|src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj|solutionrelative:src\\eldercare.infrastructure\\persistence\\eldercaredbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|E:\\ElderCare\\src\\ElderCare.Infrastructure\\Migrations\\20260311102513_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:src\\ElderCare.Infrastructure\\Migrations\\20260311102513_InitialCreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2729D05D-586B-4971-9F5D-6356AB41F2C9}|src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj|e:\\eldercare\\src\\eldercare.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2729D05D-586B-4971-9F5D-6356AB41F2C9}|src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj|solutionrelative:src\\eldercare.infrastructure\\persistence\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -149,6 +145,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{9C33B70D-122C-4536-8AEA-0AC111D088C0}|src\\ElderCare.Application\\ElderCare.Application.csproj|e:\\eldercare\\src\\eldercare.application\\features\\profiles\\dtos\\beneficiarydtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C33B70D-122C-4536-8AEA-0AC111D088C0}|src\\ElderCare.Application\\ElderCare.Application.csproj|solutionrelative:src\\eldercare.application\\features\\profiles\\dtos\\beneficiarydtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2729D05D-586B-4971-9F5D-6356AB41F2C9}|src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj|e:\\eldercare\\src\\eldercare.infrastructure\\migrations\\20260311102513_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2729D05D-586B-4971-9F5D-6356AB41F2C9}|src\\ElderCare.Infrastructure\\ElderCare.Infrastructure.csproj|solutionrelative:src\\eldercare.infrastructure\\migrations\\20260311102513_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,7 +162,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 36,
               "Title": "20260311102513_InitialCreate.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\Migrations\\20260311102513_InitialCreate.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Infrastructure\\Migrations\\20260311102513_InitialCreate.cs",
@@ -170,12 +170,11 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\Migrations\\20260311102513_InitialCreate.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T10:25:14.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T10:25:14.042Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Infrastructure\\DependencyInjection.cs",
@@ -183,12 +182,11 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\DependencyInjection.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T10:22:31.678Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T10:22:31.678Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "UnitOfWork.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\Persistence\\UnitOfWork.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Infrastructure\\Persistence\\UnitOfWork.cs",
@@ -196,12 +194,11 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\Persistence\\UnitOfWork.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:55:46.522Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:55:46.522Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 26,
               "Title": "FraudDetectionCommandHandlers.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\FraudDetection\\Handlers\\FraudDetectionCommandHandlers.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\FraudDetection\\Handlers\\FraudDetectionCommandHandlers.cs",
@@ -209,8 +206,7 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\FraudDetection\\Handlers\\FraudDetectionCommandHandlers.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:43:10.215Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:43:10.215Z"
             },
             {
               "$type": "Document",
@@ -222,8 +218,7 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\Persistence\\SeedData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-27T15:46:19.235Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-27T15:46:19.235Z"
             },
             {
               "$type": "Document",
@@ -235,8 +230,7 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\Persistence\\ElderCareDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:29:36.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T05:29:36.462Z"
             },
             {
               "$type": "Document",
@@ -248,8 +242,7 @@
               "RelativeToolTip": "src\\ElderCare.API\\Program.cs",
               "ViewState": "AgIAAHwAAAAAAAAAAAAYwJAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T13:49:16.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T13:49:16.055Z"
             },
             {
               "$type": "Document",
@@ -266,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "ChatService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\ChatService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\ChatService.cs",
@@ -274,12 +267,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\ChatService.cs",
               "ViewState": "AgIAAEABAAAAAAAAAAAmwBIAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:46:45.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:46:45.985Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 17,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\AuthServices.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\AuthServices.cs",
@@ -287,12 +279,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\AuthServices.cs",
               "ViewState": "AgIAAJUAAAAAAAAAAAAUwLMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:46:50.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:46:50.165Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "ChatbotController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\ChatbotController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\ChatbotController.cs",
@@ -300,12 +291,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\ChatbotController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:51:52.882Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:51:52.882Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "IFraudDetectionService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\IFraudDetectionService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\IFraudDetectionService.cs",
@@ -313,12 +303,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\IFraudDetectionService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:42:41.197Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:42:41.197Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "Customer.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Entities\\Customer.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Entities\\Customer.cs",
@@ -326,12 +315,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T17:00:22.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T17:00:22.063Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "CaregiverProfilesController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
@@ -339,12 +327,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
               "ViewState": "AgIAAKoAAAAAAAAAAAAjwNUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T08:55:37.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T08:55:37.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "ChatbotService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\ChatbotService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\ChatbotService.cs",
@@ -352,12 +339,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\ChatbotService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwDoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T13:17:47.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T13:17:47.821Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Enums.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Enums\\Enums.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Enums\\Enums.cs",
@@ -365,12 +351,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Enums\\Enums.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T08:59:35.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T08:59:35.876Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "ChatController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\ChatController.cs",
@@ -378,12 +363,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\ChatController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:51:52.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:51:52.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "Booking.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Entities\\Booking.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Entities\\Booking.cs",
@@ -391,12 +375,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Booking.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAAwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:24:25.207Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T13:24:25.207Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "BookingCommands.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\Bookings\\Commands\\BookingCommands.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\Bookings\\Commands\\BookingCommands.cs",
@@ -404,12 +387,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\Bookings\\Commands\\BookingCommands.cs",
               "ViewState": "AgIAABsBAAAAAAAAAAAqwEgBAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T16:08:20.015Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T16:08:20.015Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 19,
               "Title": "IChatService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Common\\Interfaces\\IChatService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Common\\Interfaces\\IChatService.cs",
@@ -417,12 +399,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Common\\Interfaces\\IChatService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T15:51:01.815Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T15:51:01.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "BookingsController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\BookingsController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\BookingsController.cs",
@@ -430,12 +411,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\BookingsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBkAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T16:04:21.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T16:04:21.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 18,
               "Title": "IChatbotService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Common\\Interfaces\\IChatbotService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Common\\Interfaces\\IChatbotService.cs",
@@ -443,12 +423,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Common\\Interfaces\\IChatbotService.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAQwBYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T14:55:47.238Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T14:55:47.238Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 24,
               "Title": "Dispute.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Entities\\Dispute.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Entities\\Dispute.cs",
@@ -456,12 +435,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Dispute.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAA/wCIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T13:25:33.507Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T13:25:33.507Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 22,
               "Title": "AuthCommands.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\Auth\\Commands\\AuthCommands.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\Auth\\Commands\\AuthCommands.cs",
@@ -469,12 +447,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\Auth\\Commands\\AuthCommands.cs",
               "ViewState": "AgIAAEsBAAAAAAAAAAAAwF0BAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T10:29:06.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T10:29:06.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 20,
               "Title": "ElderCare.API.http",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\ElderCare.API.http",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\ElderCare.API.http",
@@ -482,12 +459,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\ElderCare.API.http",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-02-08T13:48:49.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T13:48:49.258Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 21,
               "Title": "AuthQueries.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\Auth\\Queries\\AuthQueries.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\Auth\\Queries\\AuthQueries.cs",
@@ -495,12 +471,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\Auth\\Queries\\AuthQueries.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAgwBMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T10:29:49.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T10:29:49.272Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 23,
               "Title": "EntityConfigurations.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Infrastructure\\Persistence\\Configurations\\EntityConfigurations.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Infrastructure\\Persistence\\Configurations\\EntityConfigurations.cs",
@@ -508,12 +483,11 @@
               "RelativeToolTip": "src\\ElderCare.Infrastructure\\Persistence\\Configurations\\EntityConfigurations.cs",
               "ViewState": "AgIAAKEBAAAAAAAAAAA+wLUBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:32:16.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T05:32:16.093Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 27,
               "Title": "LocationService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\LocationService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\LocationService.cs",
@@ -521,12 +495,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\LocationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:47:16.565Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:47:16.565Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 25,
               "Title": "NotificationService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\NotificationService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\NotificationService.cs",
@@ -534,12 +507,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\NotificationService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T08:47:21.16Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T08:47:21.16Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 30,
               "Title": "AuthController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\AuthController.cs",
@@ -547,12 +519,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAIBJwBcAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:28:33.768Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T05:28:33.768Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 28,
               "Title": "MatchingService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\MatchingService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\MatchingService.cs",
@@ -560,12 +531,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\MatchingService.cs",
               "ViewState": "AgIAAHMAAAAAAAAAAAAkwAwAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T08:05:08.685Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T08:05:08.685Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 31,
               "Title": "CustomersController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\CustomersController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\CustomersController.cs",
@@ -573,12 +543,11 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\CustomersController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:28:22.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T05:28:22.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 32,
               "Title": "Caregiver.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Entities\\Caregiver.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Entities\\Caregiver.cs",
@@ -586,12 +555,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Caregiver.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T05:22:48.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-09T05:22:48.305Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 33,
               "Title": "Beneficiary.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Entities\\Beneficiary.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Entities\\Beneficiary.cs",
@@ -599,12 +567,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Beneficiary.cs",
               "ViewState": "AgIAABUAAAAAAAAAAABYwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T08:07:13.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T08:07:13.592Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 34,
               "Title": "BeneficiaryQueries.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\Profiles\\Queries\\BeneficiaryQueries.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\Profiles\\Queries\\BeneficiaryQueries.cs",
@@ -612,12 +579,11 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\Profiles\\Queries\\BeneficiaryQueries.cs",
               "ViewState": "AgIAAIsAAAAAAAAAAAAcwJgAAABWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T08:04:36.451Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T08:04:36.451Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 29,
               "Title": "IRepositories.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Interfaces\\IRepositories.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Interfaces\\IRepositories.cs",
@@ -625,12 +591,11 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Interfaces\\IRepositories.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAiwAoAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T07:59:37.002Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T07:59:37.002Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 35,
               "Title": "BeneficiaryDTOs.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Features\\Profiles\\DTOs\\BeneficiaryDTOs.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Features\\Profiles\\DTOs\\BeneficiaryDTOs.cs",
@@ -638,8 +603,7 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Features\\Profiles\\DTOs\\BeneficiaryDTOs.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-08T07:58:36.614Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-08T07:58:36.614Z"
             },
             {
               "$type": "Bookmark",
