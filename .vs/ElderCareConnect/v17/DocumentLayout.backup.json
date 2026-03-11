@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "E:\\ElderCare\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{14D5CD82-85AA-42C6-8709-E2D9C6513CE1}|src\\ElderCare.API\\ElderCare.API.csproj|e:\\eldercare\\src\\eldercare.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{14D5CD82-85AA-42C6-8709-E2D9C6513CE1}|src\\ElderCare.API\\ElderCare.API.csproj|solutionrelative:src\\eldercare.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9C33B70D-122C-4536-8AEA-0AC111D088C0}|src\\ElderCare.Application\\ElderCare.Application.csproj|e:\\eldercare\\src\\eldercare.application\\services\\chatbotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9C33B70D-122C-4536-8AEA-0AC111D088C0}|src\\ElderCare.Application\\ElderCare.Application.csproj|solutionrelative:src\\eldercare.application\\services\\chatbotservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{5B2F43FE-6583-43F0-8994-151C6FEE4584}|src\\ElderCare.Domain\\ElderCare.Domain.csproj|e:\\eldercare\\src\\eldercare.domain\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5B2F43FE-6583-43F0-8994-151C6FEE4584}|src\\ElderCare.Domain\\ElderCare.Domain.csproj|solutionrelative:src\\eldercare.domain\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14D5CD82-85AA-42C6-8709-E2D9C6513CE1}|src\\ElderCare.API\\ElderCare.API.csproj|e:\\eldercare\\src\\eldercare.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{14D5CD82-85AA-42C6-8709-E2D9C6513CE1}|src\\ElderCare.API\\ElderCare.API.csproj|solutionrelative:src\\eldercare.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5B2F43FE-6583-43F0-8994-151C6FEE4584}|src\\ElderCare.Domain\\ElderCare.Domain.csproj|e:\\eldercare\\src\\eldercare.domain\\entities\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -155,19 +155,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Enums.cs",
-              "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Enums\\Enums.cs",
-              "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Enums\\Enums.cs",
-              "ToolTip": "E:\\ElderCare\\src\\ElderCare.Domain\\Enums\\Enums.cs",
-              "RelativeToolTip": "src\\ElderCare.Domain\\Enums\\Enums.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T08:59:35.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "CaregiverProfilesController.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
@@ -265,15 +252,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ChatbotService.cs",
               "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\ChatbotService.cs",
               "RelativeDocumentMoniker": "src\\ElderCare.Application\\Services\\ChatbotService.cs",
-              "ToolTip": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\ChatbotService.cs*",
-              "RelativeToolTip": "src\\ElderCare.Application\\Services\\ChatbotService.cs*",
+              "ToolTip": "E:\\ElderCare\\src\\ElderCare.Application\\Services\\ChatbotService.cs",
+              "RelativeToolTip": "src\\ElderCare.Application\\Services\\ChatbotService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwDoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-24T13:17:47.821Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\ElderCare.API\\appsettings.json",
+              "ToolTip": "E:\\ElderCare\\src\\ElderCare.API\\appsettings.json",
+              "RelativeToolTip": "src\\ElderCare.API\\appsettings.json",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-24T13:11:39.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.Domain\\Enums\\Enums.cs",
+              "RelativeDocumentMoniker": "src\\ElderCare.Domain\\Enums\\Enums.cs",
+              "ToolTip": "E:\\ElderCare\\src\\ElderCare.Domain\\Enums\\Enums.cs",
+              "RelativeToolTip": "src\\ElderCare.Domain\\Enums\\Enums.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T08:59:35.876Z",
               "EditorCaption": ""
             },
             {
@@ -303,19 +316,6 @@
               "ViewState": "AgIAAB0AAAAAAAAAAAAAwDgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-09T13:24:25.207Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\ElderCare\\src\\ElderCare.API\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\ElderCare.API\\appsettings.json",
-              "ToolTip": "E:\\ElderCare\\src\\ElderCare.API\\appsettings.json",
-              "RelativeToolTip": "src\\ElderCare.API\\appsettings.json",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-24T13:11:39.489Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",

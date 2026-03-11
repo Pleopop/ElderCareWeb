@@ -162,8 +162,7 @@
               "RelativeToolTip": "src\\ElderCare.API\\Controllers\\CaregiverProfilesController.cs",
               "ViewState": "AgIAAKoAAAAAAAAAAAAjwNUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T08:55:37.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T08:55:37.389Z"
             },
             {
               "$type": "Document",
@@ -175,8 +174,7 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Entities\\Customer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-04T17:00:22.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-04T17:00:22.063Z"
             },
             {
               "$type": "Document",
@@ -260,8 +258,7 @@
               "RelativeToolTip": "src\\ElderCare.Application\\Services\\ChatbotService.cs",
               "ViewState": "AgIAABwAAAAAAAAAAAAQwDoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-24T13:17:47.821Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T13:17:47.821Z"
             },
             {
               "$type": "Document",
@@ -271,7 +268,7 @@
               "RelativeDocumentMoniker": "src\\ElderCare.API\\appsettings.json",
               "ToolTip": "E:\\ElderCare\\src\\ElderCare.API\\appsettings.json",
               "RelativeToolTip": "src\\ElderCare.API\\appsettings.json",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACcAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-24T13:11:39.489Z",
               "EditorCaption": ""
@@ -286,12 +283,7 @@
               "RelativeToolTip": "src\\ElderCare.Domain\\Enums\\Enums.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T08:59:35.876Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "WhenOpened": "2026-03-11T08:59:35.876Z"
             },
             {
               "$type": "Document",
@@ -580,6 +572,10 @@
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-08T07:58:36.614Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
