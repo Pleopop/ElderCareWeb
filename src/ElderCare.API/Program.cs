@@ -1,23 +1,17 @@
-using System.Text;
 using ElderCare.Application;
 using ElderCare.Application.Common.Interfaces;
 using ElderCare.Application.Services;
 using ElderCare.Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Serilog
-//Log.Logger = new LoggerConfiguration()
-//    .ReadFrom.Configuration(builder.Configuration)
-//    .CreateLogger();
 
-//builder.Host.UseSerilog();
-
-// Add services
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
@@ -115,6 +109,11 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<ElderCare.Infrastructure.Persistence.ElderCareDbContext>();
+
+    // THÊM DÒNG NÀY LÀ LINH HỒN CỦA SQLITE TRÊN AZURE:
+    // Lệnh này tự động tạo file ElderCare.db và xây dựng tất cả các bảng nếu nó chưa tồn tại
+    await context.Database.MigrateAsync();
+
     var passwordHasher = scope.ServiceProvider.GetRequiredService<ElderCare.Application.Common.Interfaces.IPasswordHasher>();
     await ElderCare.Infrastructure.Persistence.SeedData.SeedAsync(context, passwordHasher);
 }

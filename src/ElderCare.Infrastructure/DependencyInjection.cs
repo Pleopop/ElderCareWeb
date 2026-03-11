@@ -13,7 +13,7 @@ public static class DependencyInjection
     {
         // Database
         services.AddDbContext<ElderCareDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+     options.UseSqlite(configuration.GetConnectionString("DefaultConnection")));
 
         // Repositories & UnitOfWork
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
